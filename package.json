@@ -65,5 +65,30 @@
     "husky": "^0.14.3",
     "lint-staged": "^7.2.0",
     "standard-version": "^4.4.0"
-  }
+  },
+  "keywords": [
+    "zero-configuration",
+    "build",
+    "build-tools",
+    "esnext",
+    "es2015",
+    "es2016",
+    "es2017",
+    "boilerplate",
+    "generator",
+    "application",
+    "esm",
+    "app",
+    "docker",
+    "nginx",
+    "pm2",
+    "docker-compose",
+    "jest",
+    "react",
+    "enzyme",
+    "eslint",
+    "airbnb",
+    "test",
+    "lint"
+  ]
 }
