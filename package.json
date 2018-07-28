@@ -5,5 +5,64 @@
   "main": "bin/cli.js",
   "repository": "https://github.com/jimzhan/esnext-scripts",
   "author": "Jim Zhan <jim.zhan@me.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "bin": {
+    "esnext": "bin/cli.js",
+    "esnext-scripts": "bin/cli.js"
+  },
+  "scripts": {
+    "precommit": "lint-staged",
+    "preinstall": "npm install --global npx yarn",
+    "prepush": "yarn test && npx standard-version --no-verify",
+    "commit": "git-cz",
+    "commitmsg": "commitlint --env GIT_PARAMS",
+    "test": "./bin/cli.js test"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,jsx}": [
+      "eslint --fix"
+    ]
+  },
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.6",
+    "babel-jest": "^23.4.2",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "commander": "^2.16.0",
+    "cross-env": "^5.2.0",
+    "cross-spawn": "^6.0.5",
+    "debug": "^3.1.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.10.0",
+    "jest-cli": "^23.4.1",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^7.0.0",
+    "@commitlint/config-conventional": "^7.0.1",
+    "commitizen": "^2.10.1",
+    "cz-conventional-changelog": "^2.1.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.2.0",
+    "standard-version": "^4.4.0"
+  }
 }
