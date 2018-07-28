@@ -41,7 +41,7 @@ yarn add esnext-scripts
 
 ## Usage
 
-An sample structure of React application folder.
+A sample structure of React application folder.
 
 ```
 - __tests__/

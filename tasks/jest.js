@@ -307,10 +307,10 @@ module.exports = (cmd) => { // eslint-disable-line
     process.env.NODE_ENV = 'test'
   }
   const jest = require.resolve('jest-cli/bin/jest')
-  const config = require.resolve('../etc/jest.config')
   const args = [
     '--forceExit',
-    '--config', config,
+    '--detectOpenHandles',
+    '--config', require.resolve('../etc/jest.config'),
   ]
   if (cmd.watch) args.push('--watch')
   if (cmd.verbose) args.push('--verbose')
