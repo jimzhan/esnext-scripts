@@ -16,6 +16,7 @@
     "prepush": "yarn test && npx standard-version --no-verify",
     "commit": "git-cz",
     "commitmsg": "commitlint --env GIT_PARAMS",
+    "release": "git push --follow-tags origin master && npm publish --verbose",
     "test": "./bin/cli.js test"
   },
   "commitlint": {
