@@ -5,5 +5,7 @@ module.exports = {
   transform: {
     '^.+\\.jsx?$': require.resolve('./jest.transformer.js'),
   },
-  setupTestFrameworkScriptFile: require.resolve('./jest.enzyme.js'),
+  setupFiles: [
+    require.resolve('./jest.enzyme.js'),
+  ],
 }

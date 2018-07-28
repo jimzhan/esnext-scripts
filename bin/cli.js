@@ -11,8 +11,8 @@ program.command('lint [dir]')
   .action((dir, cmd) => lint(dir, cmd))
 
 program.command('test')
-  .action(() => {
-    jest(program)
-  })
+  .option('--watch', 'Watch files for changes and rerun tests related to changed files')
+  .option('--verbose', 'Display individual test results with the test suite hierarchy')
+  .action(cmd => jest(cmd))
 
 program.parse(process.argv)

@@ -300,14 +300,21 @@ Options:
 
 /**
  * Execute `jest` test cases with default settings.
- * @param {Object} program - `commander` instance for futher arguments processing.
+ * @param {Object} cmd - `commander` options.
  */
-module.exports = (program) => { // eslint-disable-line
+module.exports = (cmd) => { // eslint-disable-line
   if (process.env.NODE_ENV == null) {
     process.env.NODE_ENV = 'test'
   }
   const jest = require.resolve('jest-cli/bin/jest')
   const config = require.resolve('../etc/jest.config')
+  const args = [
+    '--forceExit',
+    '--config', config,
+  ]
+  if (cmd.watch) args.push('--watch')
+  if (cmd.verbose) args.push('--verbose')
+
   helpers.debug(`start testing => ${process.cwd()}`)
-  helpers.execute(jest, ['--config', config])
+  helpers.execute(jest, args)
 }
