@@ -1,3 +1,4 @@
+const { CLIEngine } = require('eslint')
 const helpers = require('./helpers')
 
 /*
@@ -57,32 +58,47 @@ Miscellaneous:
 */
 
 /**
- * Execute `eslint` linting with default settings.
- * @param {Object} cmd - `commander` options.
- * @param {String} dir - path for linting (`process.cwd()` by default).
+ * Perform linting via `eslint` API.
+ * @param {String} dir - directory to perform linting.
+ * @param {Object} cmd - options from `commander`.
  */
-module.exports = (dir = process.cwd(), cmd) => {
-  helpers.debug(`start linting => ${dir}`)
-  /*
-  ------------------------------------------------------
-  @FIXME -- executable is not working.
-  const eslint = new CLIEngine({
-    fix: cmd.fix,
+const lintFromApi = (dir, cmd) => { // eslint-disable-line
+  const options = require('../.eslintrc') // eslint-disable-line
+  const eslint = new CLIEngine(Object.assign({
+    fix: !!cmd.fix, // @FIXME doesn't really work.
     extensions: ['.js', '.jsx'],
-    configFile: require.resolve('../etc/.eslintrc'),
-    useEslintrc: true,
-  })
-  eslint.executeOnFiles([cwd])
-  ------------------------------------------------------
-  */
+  }, options))
+  const { log } = console
+  const { results } = eslint.executeOnFiles([dir])
+  const formatter = eslint.getFormatter('stylish')
+  const output = formatter(results)
+  if (output) log(output)
+  helpers.info(`--fix ${cmd.fix}`)
+}
+
+/**
+ * Execute `eslint` from CLI.
+ * @param {String} dir - directory to perform linting.
+ * @param {Object} cmd - options from `commander`.
+ */
+const lintFromCli = (dir, cmd) => { // eslint-disable-line
   const args = [
     dir,
     '--ext', '.js,jsx',
     '--config', require.resolve('../.eslintrc'),
   ]
   if (cmd.fix) args.push('--fix')
+  helpers.execute(require.resolve('eslint/bin/eslint'), args)
+}
 
-  const eslint = require.resolve('eslint/bin/eslint')
-  helpers.debug(`${eslint} ${args.join(' ')}`)
-  helpers.execute(eslint, args)
+
+/**
+ * Execute `eslint` linting with default settings.
+ * @param {Object} cmd - `commander` options.
+ * @param {String} dir - path for linting (`process.cwd()` by default).
+ */
+module.exports = (dir = process.cwd(), cmd) => {
+  helpers.info(`start linting => ${dir}`)
+  const cwd = process.cwd()
+  lintFromCli(cwd, cmd)
 }

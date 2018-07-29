@@ -16,6 +16,7 @@
     "commit": "git-cz",
     "commitmsg": "commitlint --env GIT_PARAMS",
     "release": "git push --follow-tags origin master && npm publish --verbose",
+    "lint": "cross-env DEBUG=esnext-scripts ./bin/cli.js lint --fix",
     "test": "cross-env DEBUG=esnext-scripts ./bin/cli.js test"
   },
   "commitlint": {
