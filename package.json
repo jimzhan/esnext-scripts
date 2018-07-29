@@ -12,7 +12,6 @@
   },
   "scripts": {
     "precommit": "lint-staged",
-    "preinstall": "npm install --global npx yarn",
     "prepush": "yarn test && npx standard-version --no-verify",
     "commit": "git-cz",
     "commitmsg": "commitlint --env GIT_PARAMS",
@@ -37,11 +36,10 @@
   "jest": {
     "collectCoverage": true,
     "collectCoverageFrom": [
-      "**/*.{js}",
+      "tasks/**/*.{js}",
+      "!tasks/jest.js",
+      "!tasks/lint.js",
       "!**/node_modules/**"
-    ],
-    "coverageReporters": [
-      "html"
     ],
     "coverageThreshold": {
       "global": {

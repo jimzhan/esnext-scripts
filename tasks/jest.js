@@ -299,6 +299,25 @@ Options:
 */
 
 /**
+ * Setup CLI arguments for `jest` by parsing custom config in `package.json`.
+ * *NOTE* `jest` does not provide any true programmatical way for calling.
+ */
+const prepareArguments = () => {
+  const args = [
+    '--detectOpenHandles',
+    '--config', require.resolve('../etc/jest.config'),
+  ]
+  const settings = helpers.getPackageSettings('jest')
+  if (settings) {
+    Object.keys(settings).forEach((key) => {
+      args.push(`--${key}`, JSON.stringify(settings[key]))
+    })
+  }
+  return args
+}
+
+
+/**
  * Execute `jest` test cases with default settings.
  * @param {Object} cmd - `commander` options.
  */
@@ -307,11 +326,7 @@ module.exports = (cmd) => { // eslint-disable-line
     process.env.NODE_ENV = 'test'
   }
   const jest = require.resolve('jest-cli/bin/jest')
-  const args = [
-    '--forceExit',
-    '--detectOpenHandles',
-    '--config', require.resolve('../etc/jest.config'),
-  ]
+  const args = prepareArguments()
   if (cmd.watch) args.push('--watch')
   if (cmd.verbose) args.push('--verbose')
 

@@ -24,7 +24,4 @@ install:
   - npm install
 
 script:
-  - yarn test
-
-after_success:
-  - npm publish --verbose
+  - npm test

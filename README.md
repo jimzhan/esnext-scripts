@@ -7,6 +7,7 @@ Opinionated ESNext application scripts and configurations.
 [![JavaScript Style Guide](https://camo.githubusercontent.com/387caee7992b38dcac6cb23f87abf0ba139d7101/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f636f64652532307374796c652d616972626e622d626c75652e737667)](https://github.com/airbnb/javascript)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
+
 ## Install
 
 ```shell
@@ -34,10 +35,14 @@ yarn add esnext-scripts
   * [Jest](https://github.com/facebook/jest)
   * [Enzyme](https://github.com/airbnb/enzyme)
 
+
 ## Available commands
 
 - `esnext lint [optional-folder]` - start linting with `airbnb` rules set.
-- `esnext test` - start executing your `Jest` test specs.
+- `esnext test` - start executing your `Jest` test specs. Supported options:
+  * `--verbose` - Display individual test results with the test suite hierarchy.
+  * `--watch` - Watch files for changes and rerun tests related to changed files.
+
 
 ## Usage
 
@@ -74,6 +79,32 @@ describe('<App />', () => {
     "test": "esnext test"
   },
 ```
+
+
+## Configuration
+
+* Configure your `jest` via `package.json`
+
+```json
+"jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "**/*.{js}",
+      "!**/node_modules/**"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    }
+  }
+}
+```
+
+**NOTE** All these settings will be stringify from JSON to `string` then passed to `jest.runCLI`, since `jest` does not support any programmatic way for calling as the moment.
 
 ### License
 
