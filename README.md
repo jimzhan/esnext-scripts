@@ -104,7 +104,7 @@ describe('<App />', () => {
 }
 ```
 
-**NOTE** All these settings will be stringify from JSON to `string` then passed to `jest.runCLI`, since `jest` does not support any programmatic way for calling as the moment.
+**NOTE** All these settings will be stringify from JSON to `string` then passed to `jest.runCLI`, since `jest` does not support any programmatic way for calling at the moment.
 
 ### License
 
