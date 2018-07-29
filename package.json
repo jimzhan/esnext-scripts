@@ -17,7 +17,7 @@
     "commit": "git-cz",
     "commitmsg": "commitlint --env GIT_PARAMS",
     "release": "git push --follow-tags origin master && npm publish --verbose",
-    "test": "./bin/cli.js test"
+    "test": "cross-env DEBUG=esnext-scripts ./bin/cli.js test"
   },
   "commitlint": {
     "extends": [
@@ -33,6 +33,24 @@
     "**/*.{js,jsx}": [
       "eslint --fix"
     ]
+  },
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "**/*.{js}",
+      "!**/node_modules/**"
+    ],
+    "coverageReporters": [
+      "html"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    }
   },
   "dependencies": {
     "babel-core": "^6.26.3",
@@ -54,6 +72,7 @@
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.10.0",
     "jest-cli": "^23.4.1",
+    "log-symbols": "^2.2.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1"
   },

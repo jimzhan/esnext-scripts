@@ -1,7 +1,7 @@
-const pkg = require('../package.json')
+const helpers = require('../tasks/helpers')
 
-describe('[esnext-scripts]', () => {
+describe(helpers.pkg.name, () => {
   it('should test itself', () => {
-    expect(pkg.name).toBe('esnext-scripts')
+    expect(helpers.pkg.name).toBe('esnext-scripts')
   })
 })
