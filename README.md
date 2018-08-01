@@ -31,9 +31,14 @@ yarn add esnext-scripts
 - A mostly reasonable approach to JavaScript by:
   * [ESLint](https://eslint.org/)
   * [Airbnb Javascript Style Guide](https://github.com/airbnb/javascript)
-- Delightful JavaScript Testing with:
+- Delightful JavaScript Testing with
   * [Jest](https://github.com/facebook/jest)
   * [Enzyme](https://github.com/airbnb/enzyme)
+
+
+## Why?
+
+In my recent mono-repository implementation, I found that really hard and confusing about testing packages built on top of `babel`. Babel is awesome, but it doesn't really fly on mono-repository packages as it applies to package level only, meaning that you'll need to duplicate your `babel` and `jest` settings for each individual packages, which isn't really developer-friendly, so I decided to create a developer-friendly solution, here is comes :smiley:
 
 
 ## Available commands
