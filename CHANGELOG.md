@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.9.3"></a>
+## [0.9.3](https://github.com/jimzhan/esnext-scripts/compare/v0.9.1...v0.9.3) (2018-08-01)
+
+
+### Bug Fixes
+
+* **jest:** CLI to `execa` to receive proper exit status ([56897a8](https://github.com/jimzhan/esnext-scripts/commit/56897a8))
+* **jest:** CLI to `execa` to receive proper exit status ([c4d8e46](https://github.com/jimzhan/esnext-scripts/commit/c4d8e46))
+* **jest:** CLI to `execa` to receive proper exit status ([f871210](https://github.com/jimzhan/esnext-scripts/commit/f871210))
+
+
+
 <a name="0.9.2"></a>
 ## [0.9.2](https://github.com/jimzhan/esnext-scripts/compare/v0.9.1...v0.9.2) (2018-07-29)
 
