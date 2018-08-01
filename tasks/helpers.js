@@ -1,6 +1,6 @@
 const fs = require('fs')
 const path = require('path')
-const spawn = require('cross-spawn')
+const execa = require('execa')
 const symbols = require('log-symbols')
 
 const pkg = require('../package.json')
@@ -20,7 +20,7 @@ exports.error = message => exports.debug(`${symbols.error} ${message}`)
  * @param {array} args - list of command arguments.
  * @param {object} options - command options.
  */
-exports.execute = (cmd, args, options = {}) => spawn.sync(cmd, args, Object.assign({ stdio: 'inherit' }, options))
+exports.execute = (cmd, args) => execa.sync(cmd, args, Object.assign({ stdio: 'inherit' }))
 
 /**
  * Fetch JSON object associated with the given key from `process.cwd()/package.json` .
