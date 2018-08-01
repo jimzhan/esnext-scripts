@@ -35,7 +35,7 @@
     ]
   },
   "jest": {
-    "collectCoverage": true,
+    "collectCoverage": false,
     "collectCoverageFrom": [
       "tasks/**/*.{js}",
       "!tasks/jest.js",
