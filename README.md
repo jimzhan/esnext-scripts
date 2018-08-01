@@ -40,9 +40,9 @@ yarn add esnext-scripts
 
 - `esnext lint [optional-folder]` - start linting with `airbnb` rules set.
 - `esnext test` - start executing your `Jest` test specs. Supported options:
-  * `--verbose` - Display individual test results with the test suite hierarchy.
+  * `--forceExit` - Force Jest to exit after all tests have completed running. This is useful when resources set up by test code cannot be.
   * `--watch` - Watch files for changes and rerun tests related to changed files.
-
+  * `--verbose` - Display individual test results with the test suite hierarchy.
 
 ## Usage
 
