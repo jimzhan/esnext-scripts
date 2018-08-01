@@ -329,6 +329,7 @@ module.exports = (cmd) => { // eslint-disable-line
   const args = prepareArguments()
   if (cmd.watch) args.push('--watch')
   if (cmd.verbose) args.push('--verbose')
+  if (cmd.forceExit) args.push('--forceExit')
 
   helpers.info(`start testing => ${process.cwd()}`)
   helpers.execute(jest, args)
