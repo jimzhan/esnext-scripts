@@ -304,7 +304,6 @@ Options:
  */
 const prepareArguments = () => {
   const args = [
-    '--detectOpenHandles',
     '--config', require.resolve('../etc/jest.config'),
   ]
   const settings = helpers.getPackageSettings('jest')
@@ -327,9 +326,12 @@ module.exports = (cmd) => { // eslint-disable-line
   }
   const jest = require.resolve('jest-cli/bin/jest')
   const args = prepareArguments()
+
   if (cmd.watch) args.push('--watch')
   if (cmd.verbose) args.push('--verbose')
   if (cmd.forceExit) args.push('--forceExit')
+  if (cmd.detectLeaks) args.push('--detectLeaks')
+  if (cmd.detectOpenHandles) args.push('--detectOpenHandles')
 
   helpers.info(`start testing => ${process.cwd()}`)
   helpers.execute(jest, args)

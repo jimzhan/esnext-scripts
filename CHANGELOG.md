@@ -3,7 +3,7 @@
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
 <a name="0.10.4"></a>
-## [0.10.4](https://github.com/jimzhan/esnext-scripts/compare/v0.10.2...v0.10.4) (2018-08-04)
+## [0.10.4](https://github.com/jimzhan/esnext-scripts/compare/v0.10.2...v0.10.4) (2018-08-02)
 
 
 

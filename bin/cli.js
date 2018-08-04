@@ -15,7 +15,17 @@ program.command('test')
   .option('--verbose', 'Display individual test results with the test suite hierarchy')
   .option(
     '--forceExit',
-    'Force Jest to exit after all tests have completed running. This is useful when resources set up by test code cannot be' // eslint-disable-line
+    // eslint-disable-next-line
+    'Force Jest to exit after all tests have completed running. This is useful when resources set up by test code cannot be adequately cleaned up.',
+  )
+  .option(
+    '--detectLeaks',
+    // eslint-disable-next-line
+    '**EXPERIMENTAL**: Detect memory leaks in tests. After executing a test, it will try to garbage collect the global object used, and fail if it was leaked.',
+  )
+  .option(
+    '--detectOpenHandles',
+    'Print out remaining open handles preventing Jest from exiting at the end of a test run.',
   )
   .action(cmd => jest(cmd))
 
