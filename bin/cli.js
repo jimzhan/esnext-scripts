@@ -5,12 +5,17 @@ const { lint, jest } = require('../tasks')
 
 program.version(pkg.version)
 
-program.command('lint [dir]')
+program.command('lint [dir]', 'start linting')
   .option('--fix', 'Automatically fix problems')
   .option('--fix-dry-run', 'Automatically fix problems without saving the changes to the file system')
   .action((dir, cmd) => lint(dir, cmd))
 
-program.command('test')
+program.command('new <name>', 'new project name')
+  .action((name) => {
+    require('../tasks/create')(name) // eslint-disable-line global-require
+  })
+
+program.command('test', 'start testing `jest` test specs')
   .option('--watch', 'Watch files for changes and rerun tests related to changed files')
   .option('--verbose', 'Display individual test results with the test suite hierarchy')
   .option(
