@@ -1,5 +1,15 @@
 const helpers = require('./helpers')
 
+exports.command = 'test'
+exports.desc = 'Start testing `jest` test specs'
+exports.option = [
+  ('--watch', { description: 'Watch files for changes and rerun tests related to changed files' }),
+  ('--detectLeaks', { description: '**EXPERIMENTAL**: Detect memory leaks in tests. After executing a test, it will try to garbage collect the global object used, and fail if it was leaked.' }),
+  ('--forceExit', { description: 'Force Jest to exit after all tests have completed running. This is useful when resources set up by test code cannot be adequately cleaned up.' }),
+  ('--verbose', { description: 'Display individual test results with the test suite hierarchy' }),
+  ('--detectOpenHandles', { description: 'Print out remaining open handles preventing Jest from exiting at the end of a test run.' }),
+]
+
 /**
  * Setup CLI arguments for `jest` by parsing custom config in `package.json`.
  * *NOTE* `jest` does not provide any true programmatical way for calling.
@@ -17,15 +27,6 @@ const prepareArguments = () => {
   return args
 }
 
-exports.command = 'test [dir]'
-exports.desc = 'Start testing `jest` test specs'
-exports.option = [
-  ('--watch', { description: 'Watch files for changes and rerun tests related to changed files' }),
-  ('--detectLeaks', { description: '**EXPERIMENTAL**: Detect memory leaks in tests. After executing a test, it will try to garbage collect the global object used, and fail if it was leaked.' }),
-  ('--forceExit', { description: 'Force Jest to exit after all tests have completed running. This is useful when resources set up by test code cannot be adequately cleaned up.' }),
-  ('--verbose', { description: 'Display individual test results with the test suite hierarchy' }),
-  ('--detectOpenHandles', { description: 'Print out remaining open handles preventing Jest from exiting at the end of a test run.' }),
-]
 
 /**
  * Execute `jest` test cases with default settings.

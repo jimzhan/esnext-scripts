@@ -1,4 +1,4 @@
-const helpers = require('../tasks/helpers')
+const helpers = require('../commands/helpers')
 
 describe(helpers.pkg.name, () => {
   it('getPackageSettings()', () => {
