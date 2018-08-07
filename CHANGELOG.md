@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.12.0"></a>
+# [0.12.0](https://github.com/jimzhan/esnext-scripts/compare/v0.10.5...v0.12.0) (2018-08-07)
+
+
+### Features
+
+* **cli:** replace buggy `commander` with `yargs` ([243d528](https://github.com/jimzhan/esnext-scripts/commit/243d528))
+* **cmd:** add `yargs` supports ([0c2bb4b](https://github.com/jimzhan/esnext-scripts/commit/0c2bb4b))
+* **pkg:** add `plop` based template generator ([dd2eecd](https://github.com/jimzhan/esnext-scripts/commit/dd2eecd))
+* **scaffold:** enable basic `yarn` workspace scaffold ([4d0b02c](https://github.com/jimzhan/esnext-scripts/commit/4d0b02c))
+
+
+
 <a name="0.11.0"></a>
 # [0.11.0](https://github.com/jimzhan/esnext-scripts/compare/v0.10.4...v0.11.0) (2018-08-07)
 
