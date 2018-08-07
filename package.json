@@ -7,8 +7,8 @@
   "author": "Jim Zhan <jim.zhan@me.com>",
   "license": "MIT",
   "bin": {
-    "esnext": "./esnext.js",
-    "esnext-scripts": "./esnext.js"
+    "esnext": "./bin/esnext.js",
+    "esnext-scripts": "./bin/esnext.js"
   },
   "scripts": {
     "precommit": "lint-staged",
@@ -16,8 +16,8 @@
     "commit": "git-cz",
     "commitmsg": "commitlint --env GIT_PARAMS",
     "release": "git push --follow-tags origin master && npm publish --verbose",
-    "lint": "cross-env DEBUG=esnext-scripts ./esnext.js lint --fix",
-    "test": "cross-env DEBUG=esnext-scripts ./esnext.js test"
+    "lint": "cross-env DEBUG=esnext-scripts ./bin/esnext.js lint --fix",
+    "test": "cross-env DEBUG=esnext-scripts ./bin/esnext.js test"
   },
   "commitlint": {
     "extends": [

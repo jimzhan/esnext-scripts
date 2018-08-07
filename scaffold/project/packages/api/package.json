@@ -1,0 +1,25 @@
+{
+  "name": "@{{ name }}/api",
+  "version": "{{ version }}",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "npx rimraf dist && babel src -d dist",
+    "start": "yo-env",
+    "start:development": "nodemon --inspect --require esm index.js",
+    "start:production": "node --require esm index.js",
+    "lint": "esnext lint",
+    "test": "esnext test"
+  },
+  "dependencies": {
+    "@koa/cors": "^2.2.2",
+    "convict-register": "^1.1.4",
+    "koa": "^2.5.2",
+    "koa-mount": "^3.0.0",
+    "supertest": "^3.1.0",
+    "yo-env": "^0.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.3"
+  }
+}

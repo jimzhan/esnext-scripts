@@ -1,0 +1,45 @@
+{
+  "private": true,
+  "name": "webapp",
+  "version": "0.3.0",
+  "description": "Unified web application",
+  "engines": {
+    "node": ">=10.3.0"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "repository": "https://github.com/jimzhan/webapp.git",
+  "author": "Jim Zhan <jim.zhan@me.com>",
+  "license": "MIT",
+  "scripts": {
+    "preinstall": "npm install --global npx",
+    "prepush": "npm run test && npx standard-version --no-verify",
+    "clean": "lerna clean && npx shx rm -rf node_modules",
+    "commit": "git add . && npx git-cz",
+    "commitmsg": "commitlint -e $GIT_PARAMS",
+    "lint": "lerna run lint",
+    "start": "concurrently \"yarn workspace @webapp/api start\" \"yarn workspace @webapp/ui start\"",
+    "test": "yarn wsrun test"
+  },
+  "dependencies": {
+    "concurrently": "^3.6.0",
+    "lerna": "^2.11.0",
+    "shx": "^0.3.2",
+    "wsrun": "^2.2.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^7.0.0",
+    "@commitlint/config-conventional": "^7.0.1",
+    "@commitlint/config-lerna-scopes": "^7.0.0",
+    "commitizen": "^2.10.1",
+    "cz-conventional-changelog": "^2.1.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.10.0",
+    "husky": "^0.14.3",
+    "standard-version": "^4.4.0"
+  }
+}

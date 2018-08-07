@@ -1,7 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 
-const basedir = path.resolve(__dirname, '..', '..', 'templates', 'project')
+const basedir = path.resolve(__dirname, '..', '..', 'scaffold', 'project')
 const pkgdir = path.resolve(basedir, 'packages')
 const data = { version: '0.1.0' }
 const type = 'addMany'
@@ -23,7 +23,6 @@ const actions = [
       '.eslintignore',
       '.eslintrc.js',
       '.yarnrc',
-      '.lerna.json',
       'package.json',
       'README.md',
     ].map(item => path.join(basedir, item)),
