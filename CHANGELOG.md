@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.13.0"></a>
+# [0.13.0](https://github.com/jimzhan/esnext-scripts/compare/v0.11.0...v0.13.0) (2018-08-08)
+
+
+### Bug Fixes
+
+* **cli:** fix outdated name (`create` => `new`) in `plop` ([21e4b5d](https://github.com/jimzhan/esnext-scripts/commit/21e4b5d))
+
+
+### Features
+
+* **scaffold:** enable basic `yarn` workspace scaffold ([4d0b02c](https://github.com/jimzhan/esnext-scripts/commit/4d0b02c))
+
+
+
 <a name="0.12.0"></a>
 # [0.12.0](https://github.com/jimzhan/esnext-scripts/compare/v0.10.5...v0.12.0) (2018-08-07)
 
