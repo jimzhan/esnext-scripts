@@ -1,6 +1,7 @@
 const { CLIEngine } = require('eslint')
 const helpers = require('./helpers')
 
+
 /**
  * Perform linting via `eslint` API.
  * @param {String} dir - directory to perform linting.
@@ -34,23 +35,6 @@ const lintFromCli = (dir, argv) => { // eslint-disable-line
   if (argv.fix) args.push('--fix')
   if (argv.fixDryRun) args.push('--fix-dry-run')
   helpers.execute(require.resolve('eslint/bin/eslint'), args)
-}
-
-exports.command = 'lint [dir]'
-exports.desc = 'Start linting'
-exports.option = [
-  ('--fix', { description: 'Automatically fix problems' }),
-  ('--fix-dry-run', { description: 'Automatically fix problems without saving the changes to the file system' }),
-]
-
-/**
- * Execute `eslint` linting with default settings under current `cwd`..
- * @param {Object} argv - `yargs` options.
- */
-exports.handler = (argv) => {
-  const cwd = process.cwd()
-  helpers.info(`start linting => ${cwd}`)
-  lintFromCli(cwd, argv)
 }
 
 /*
