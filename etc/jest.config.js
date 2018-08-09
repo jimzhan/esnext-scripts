@@ -6,6 +6,7 @@ module.exports = {
     '^.+\\.jsx?$': require.resolve('./jest.transformer.js'),
   },
   setupFiles: [
+    require.resolve('./jest.setup.js'),
     require.resolve('./jest.enzyme.js'),
   ],
 }
