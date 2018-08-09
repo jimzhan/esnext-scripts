@@ -1,6 +1,6 @@
 {
   "name": "esnext-scripts",
-  "version": "0.13.1",
+  "version": "0.13.2",
   "description": "Opinionated ESNext application scripts and configurations",
   "main": "bin/cli.js",
   "repository": "https://github.com/jimzhan/esnext-scripts",
