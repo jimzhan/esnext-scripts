@@ -1,8 +1,7 @@
 {
   "private": true,
-  "name": "webapp",
-  "version": "0.3.0",
-  "description": "Unified web application",
+  "name": "{{ name }}",
+  "version": "{{ version }}",
   "engines": {
     "node": ">=10.3.0"
   },
@@ -18,9 +17,9 @@
     "clean": "lerna clean && npx shx rm -rf node_modules",
     "commit": "git add . && npx git-cz",
     "commitmsg": "commitlint -e $GIT_PARAMS",
-    "lint": "lerna run lint",
+    "lint": "esnext lint packages",
     "start": "concurrently \"yarn workspace @webapp/api start\" \"yarn workspace @webapp/ui start\"",
-    "test": "yarn wsrun test"
+    "test": "esnext test"
   },
   "dependencies": {
     "concurrently": "^3.6.0",
@@ -34,12 +33,9 @@
     "@commitlint/config-lerna-scopes": "^7.0.0",
     "commitizen": "^2.10.1",
     "cz-conventional-changelog": "^2.1.0",
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb": "^17.0.0",
-    "eslint-plugin-import": "^2.13.0",
-    "eslint-plugin-jsx-a11y": "^6.1.1",
-    "eslint-plugin-react": "^7.10.0",
+    "esnext-scripts": "^0.13.1",
     "husky": "^0.14.3",
+    "lodash": "^4.17.10",
     "standard-version": "^4.4.0"
   }
 }

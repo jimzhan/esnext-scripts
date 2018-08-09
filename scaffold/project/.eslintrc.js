@@ -1,19 +1,9 @@
-module.exports = {
-  root: true,
-  parser: 'babel-eslint',
-  extends: 'airbnb',
-  env: {
-    browser: true,
-    node: true,
-    jest: true,
-  },
-  plugins: [
-  ],
+const lodash = require('lodash')
+const { config } = require('esnext-scripts')
+
+module.exports = lodash.merge(config.eslint, {
   rules: {
-    semi: [
-      'error',
-      'never',
-    ],
-    'react/jsx-filename-extension': [1, { 'extensions': ['.js', '.jsx'] }]
-  },
-}
+    'import/prefer-default-export': 0,
+    'func-names': ["error", "never"],
+  }
+})
