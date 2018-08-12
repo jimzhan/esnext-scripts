@@ -39,10 +39,12 @@ yarn add esnext-scripts
 
 ## Why?
 
-In my recent mono-repository implementation, I found that really hard and confusing about testing packages built on top of `babel`. Babel is awesome, but it doesn't really fly on mono-repository packages as it applies to package level only, meaning that you'll need to duplicate your `babel` and `jest` settings for each individual packages, which isn't really developer-friendly, so I decided to create a developer-friendly solution, here is comes :smiley:
+In my recent mono-repository implementation, I found that really hard and confusing about testing packages built on top of `babel`. Babel is awesome, but it doesn't really fly on mono-repository packages as it applies to package level only, meaning that you'll need to duplicate your `babel` and `jest` settings for each individual packages, which isn't really developer-friendly, so I decided to create one, here it comes :smiley:
 
 
-## Available commands
+## How?
+
+### Available commands
 
 - `esnext lint [optional-folder]` - start linting with `airbnb` rules set.
 - `esnext test` - start executing your `Jest` test specs. Supported options:
@@ -53,7 +55,7 @@ In my recent mono-repository implementation, I found that really hard and confus
   * `--verbose` - Display individual test results with the test suite hierarchy.
 
 
-## Usage
+### Sample Usage
 
 A sample structure of React application folder.
 
@@ -69,7 +71,7 @@ A sample structure of React application folder.
 ```javascript
 import React from 'react'
 import { shallow } from 'enzyme'
-import App from '@webapp/ui/App'
+import App from './App'
 
 describe('<App />', () => {
   it('renders three <Foo /> components', () => {
@@ -113,7 +115,7 @@ describe('<App />', () => {
 }
 ```
 
-**NOTE** All these settings will be stringify from JSON to `string` then passed to `jest.runCLI`, since `jest` does not support any programmatic way for calling at the moment.
+**NOTE** All these settings will be stringified from JSON to `string` then passed to `jest.runCLI`, since `jest` does not support any programmatic way for calling at the moment.
 
 ### License
 
