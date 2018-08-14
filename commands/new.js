@@ -6,8 +6,8 @@ const plop = require('node-plop')(
 
 exports.command = 'new <name>'
 exports.desc = 'Create a new workspace (project)'
+
 /**
- * Execute `eslint` linting with default settings under current `cwd`..
  * @param {Object} argv - `yargs` options.
  */
 exports.handler = (argv) => {

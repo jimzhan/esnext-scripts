@@ -1,5 +1,5 @@
 {
-  "name": "esnext-scripts",
+  "name": "esnext-cli",
   "version": "0.15.0",
   "description": "Opinionated ESNext application scripts and configurations",
   "main": "bin/cli.js",

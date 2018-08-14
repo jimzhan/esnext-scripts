@@ -37,6 +37,18 @@ const lintFromCli = (dir, argv) => { // eslint-disable-line
   helpers.execute(require.resolve('eslint/bin/eslint'), args)
 }
 
+exports.command = 'lint [dir]'
+exports.desc = 'Start linting using pre-defined rules set'
+
+/**
+ * Execute `eslint` linting with default settings under current `cwd`..
+ * @param {Object} argv - `yargs` options.
+ */
+exports.handler = (argv) => {
+  const dir = argv.dir || process.cwd()
+  lintFromCli(dir, argv)
+}
+
 /*
 ESLint-CLI Basic configuration:
   --no-eslintrc                  Disable use of configuration from .eslintrc.*
