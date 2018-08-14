@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.16.1"></a>
+## [0.16.1](https://github.com/jimzhan/esnext-scripts/compare/v0.16.0...v0.16.1) (2018-08-14)
+
+
+### Bug Fixes
+
+* **start:** fix order of node require ([3e069c9](https://github.com/jimzhan/esnext-scripts/commit/3e069c9))
+
+
+
 <a name="0.16.0"></a>
 # [0.16.0](https://github.com/jimzhan/esnext-scripts/compare/v0.13.3...v0.16.0) (2018-08-14)
 
