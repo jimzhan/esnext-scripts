@@ -3,7 +3,6 @@ const pm2 = require('pm2')
 const helpers = require('./helpers')
 
 
-
 exports.command = 'start <script>'
 exports.desc = 'Start the application script'
 
