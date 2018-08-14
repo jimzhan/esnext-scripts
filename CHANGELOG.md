@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.16.0"></a>
+# [0.16.0](https://github.com/jimzhan/esnext-scripts/compare/v0.13.3...v0.16.0) (2018-08-14)
+
+
+### Bug Fixes
+
+* **jest:** update `jest` to v23.5.0 to remove mis-warnings ([e3d6d3a](https://github.com/jimzhan/esnext-scripts/commit/e3d6d3a))
+* **pkg:** align with npm package name ([31528f3](https://github.com/jimzhan/esnext-scripts/commit/31528f3))
+
+
+### Features
+
+* **jest:** extends jest timeout to 10s ([770480c](https://github.com/jimzhan/esnext-scripts/commit/770480c))
+* **lint:** enable `yargs` based linting ([9912cf1](https://github.com/jimzhan/esnext-scripts/commit/9912cf1))
+* **start:** enable skeleton for `start` ([bb2ebac](https://github.com/jimzhan/esnext-scripts/commit/bb2ebac))
+* **start:** enable skeleton for `start` ([50cf25a](https://github.com/jimzhan/esnext-scripts/commit/50cf25a))
+
+
+
 <a name="0.15.0"></a>
 # [0.15.0](https://github.com/jimzhan/esnext-scripts/compare/v0.13.3...v0.15.0) (2018-08-11)
 
