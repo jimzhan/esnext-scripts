@@ -13,8 +13,8 @@ exports.desc = 'Start the application script'
  */
 const startForDevelopment = (script, argv) => { // eslint-disable-line
   const args = [
-    script,
     '-r', 'esm',
+    script,
   ]
   helpers.execute('node', args)
 }
