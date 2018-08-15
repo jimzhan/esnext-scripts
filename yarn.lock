@@ -3049,9 +3049,9 @@ gitconfiglocal@^1.0.0:
   dependencies:
     ini "^1.3.2"
 
-"gkt@https://tgz.pm2.io/gkt-1.0.0.tgz":
+gkt@1.0.0, "gkt@https://tgz.pm2.io/gkt-1.0.0.tgz":
   version "1.0.0"
-  resolved "https://tgz.pm2.io/gkt-1.0.0.tgz#405502b007f319c3f47175c4474527300f2ab5ad"
+  resolved "https://registry.yarnpkg.com/gkt/-/gkt-1.0.0.tgz#405502b007f319c3f47175c4474527300f2ab5ad"
 
 glob-base@^0.3.0:
   version "0.3.0"
