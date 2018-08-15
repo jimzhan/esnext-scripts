@@ -70,6 +70,7 @@
     "eslint-plugin-react": "^7.10.0",
     "esm": "^3.0.76",
     "execa": "^0.10.0",
+    "gkt": "^1.0.0",
     "jest-cli": "^23.5.0",
     "log-symbols": "^2.2.0",
     "node-plop": "^0.16.0",
