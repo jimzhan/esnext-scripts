@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.16.2"></a>
+## [0.16.2](https://github.com/jimzhan/esnext-scripts/compare/v0.16.0...v0.16.2) (2018-08-15)
+
+
+### Bug Fixes
+
+* **pm2:** fix pm2 optional dep issue ([2b91e14](https://github.com/jimzhan/esnext-scripts/commit/2b91e14))
+* **pm2:** fix pm2 optional dep issue ([89f4870](https://github.com/jimzhan/esnext-scripts/commit/89f4870))
+* **start:** fix order of node require ([3e069c9](https://github.com/jimzhan/esnext-scripts/commit/3e069c9))
+
+
+
 <a name="0.16.1"></a>
 ## [0.16.1](https://github.com/jimzhan/esnext-scripts/compare/v0.16.0...v0.16.1) (2018-08-14)
 
