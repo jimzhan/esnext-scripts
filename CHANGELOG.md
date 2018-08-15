@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.16.3"></a>
+## [0.16.3](https://github.com/jimzhan/esnext-scripts/compare/v0.16.2...v0.16.3) (2018-08-15)
+
+
+### Bug Fixes
+
+* **pm2:** enable explicit gkt dep ([b24bab5](https://github.com/jimzhan/esnext-scripts/commit/b24bab5))
+
+
+
 <a name="0.16.2"></a>
 ## [0.16.2](https://github.com/jimzhan/esnext-scripts/compare/v0.16.0...v0.16.2) (2018-08-15)
 
