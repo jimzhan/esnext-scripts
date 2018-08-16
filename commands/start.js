@@ -1,5 +1,3 @@
-const os = require('os')
-const pm2 = require('pm2')
 const helpers = require('./helpers')
 
 
@@ -12,11 +10,12 @@ exports.desc = 'Start the application script'
  * @param {Object} argv - `yargs` options.
  */
 const startForDevelopment = (script, argv) => { // eslint-disable-line
-  const args = [
-    '-r', 'esm',
+  const nodemon = require.resolve('nodemon/bin/nodemon')
+  helpers.execute(nodemon, [
+    '--inspect',
+    '--require', 'esm',
     script,
-  ]
-  helpers.execute('node', args)
+  ])
 }
 
 /**
@@ -26,24 +25,12 @@ const startForDevelopment = (script, argv) => { // eslint-disable-line
 
  */
 const startForProduction = (script, argv) => { // eslint-disable-line
-  const cpus = os.cpus().length
-
-  pm2.connect((err) => {
-    if (err) {
-      helpers.error(err)
-      process.exit(2)
-    }
-    pm2.start({
-      script,
-      exec_mode: 'cluster',
-      instances: cpus,
-      max_memory_restart: '100M',
-      node_args: '-r esm',
-    }, (error) => {
-      pm2.disconnect()
-      if (error) throw error
-    })
-  })
+  // @TODO Switch to pm2 once the `gkt` issue solved.
+  // const cpus = os.cpus().length
+  helpers.execute('node', [
+    '--require', 'esm',
+    script,
+  ])
 }
 
 /**
