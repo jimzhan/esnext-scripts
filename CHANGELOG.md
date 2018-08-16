@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.17.0"></a>
+# [0.17.0](https://github.com/jimzhan/esnext-scripts/compare/v0.16.2...v0.17.0) (2018-08-16)
+
+
+### Bug Fixes
+
+* **pm2:** enable explicit gkt dep ([b24bab5](https://github.com/jimzhan/esnext-scripts/commit/b24bab5))
+
+
+### Features
+
+* **start:** enable `nodemon` reloader for dev ([3f71a49](https://github.com/jimzhan/esnext-scripts/commit/3f71a49))
+
+
+
 <a name="0.16.3"></a>
 ## [0.16.3](https://github.com/jimzhan/esnext-scripts/compare/v0.16.2...v0.16.3) (2018-08-15)
 
