@@ -18,7 +18,7 @@ module.exports = {
         },
       },
     }],
-    'stage-2',
+    'stage-1',
     'react',
   ],
 }
