@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.19.0"></a>
+# [0.19.0](https://github.com/jimzhan/esnext-scripts/compare/v0.17.0...v0.19.0) (2018-08-23)
+
+
+### Features
+
+* **babel:** add babel supports along with pm2 for production ([83f34ae](https://github.com/jimzhan/esnext-scripts/commit/83f34ae))
+
+
+
 <a name="0.18.0"></a>
 # [0.18.0](https://github.com/jimzhan/esnext-scripts/compare/v0.16.3...v0.18.0) (2018-08-23)
 
