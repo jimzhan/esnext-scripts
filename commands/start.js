@@ -1,5 +1,6 @@
+const os = require('os')
+const pm2 = require('pm2')
 const helpers = require('./helpers')
-
 
 exports.command = 'start <script>'
 exports.desc = 'Start the application script'
@@ -13,7 +14,7 @@ const startForDevelopment = (script, argv) => { // eslint-disable-line
   const nodemon = require.resolve('nodemon/bin/nodemon')
   helpers.execute(nodemon, [
     '--inspect',
-    '--require', 'esm',
+    '--require', require.resolve('../etc/babel.runtime'),
     script,
   ])
 }
@@ -25,12 +26,21 @@ const startForDevelopment = (script, argv) => { // eslint-disable-line
 
  */
 const startForProduction = (script, argv) => { // eslint-disable-line
-  // @TODO Switch to pm2 once the `gkt` issue solved.
-  // const cpus = os.cpus().length
-  helpers.execute('node', [
-    '--require', 'esm',
-    script,
-  ])
+  const cpus = os.cpus().length
+  pm2.connect((err) => {
+    if (err) {
+      helpers.error(err)
+      process.exit(2)
+    }
+    pm2.start({
+      script,
+      exec_mode: 'cluster',
+      instances: cpus,
+    }, (ex) => {
+      pm2.disconnect()
+      if (ex) throw ex
+    })
+  })
 }
 
 /**
