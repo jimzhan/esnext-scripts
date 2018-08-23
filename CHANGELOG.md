@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.20.0"></a>
+# [0.20.0](https://github.com/jimzhan/esnext-scripts/compare/v0.19.0...v0.20.0) (2018-08-23)
+
+
+### Features
+
+* **babel:** replace stage-2 with stage-1 for export supports ([8e4ba07](https://github.com/jimzhan/esnext-scripts/commit/8e4ba07))
+
+
+
 <a name="0.19.0"></a>
 # [0.19.0](https://github.com/jimzhan/esnext-scripts/compare/v0.17.0...v0.19.0) (2018-08-23)
 
