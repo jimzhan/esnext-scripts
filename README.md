@@ -23,11 +23,12 @@ yarn add esnext-scripts
 
 ## What?
 
-`esnext-scripts` is set of pre-configured helpers for your next generation Javascript application. With it, you can now fully focus on your valuable implementations instead of playing around with settings & helpers again & again. Batteries included:
+`esnext-scripts` is set of pre-configured helpers for your next generation Javascript application. With it, you can now fully focus on your valuable implementations instead of playing around with various settings & helpers again & again. Batteries included:
 
 - Latest EMACScript supports backed by:
+  * [esm](https://github.com/standard-things/esm)
   * [babel-preset-env](https://babeljs.io/docs/en/babel-preset-env/)
-  * [babel-preset-stage-2](https://babeljs.io/docs/en/babel-preset-stage-2)
+  * [babel-preset-stage-1](https://babeljs.io/docs/en/babel-preset-stage-1)
   * [babel-preset-react](https://babeljs.io/docs/en/babel-preset-react)
 - A mostly reasonable approach to JavaScript by:
   * [ESLint](https://eslint.org/)
@@ -39,7 +40,7 @@ yarn add esnext-scripts
 
 ## Why?
 
-In my recent mono-repository implementation, I found that really hard and confusing about testing packages built on top of `babel`. Babel is awesome, but it doesn't really fly on mono-repository packages as it applies to package level only, meaning that you'll need to duplicate your `babel` and `jest` settings for each individual packages, which isn't really developer-friendly, so I decided to create one, here it comes :smiley:
+In my recent mono-repository implementation, I found that really hard and confusing about play around with the packages built on top of `babel`. Babel is awesome, but it doesn't really fly on mono-repository packages as it applies to package level only, meaning that you'll need to duplicate your `babel` and `jest` settings for each individual packages, which isn't really developer-friendly, so I decided to create one, here it comes :smiley:
 
 
 ## How?
@@ -47,6 +48,9 @@ In my recent mono-repository implementation, I found that really hard and confus
 ### Available commands
 
 - `esnext lint [optional-folder]` - start linting with `airbnb` rules set.
+- `esnext start <script>.js` - start your application server (via the given script file) for:
+  * `NODE_ENV=development` - with builtin [nodemon](https://github.com/remy/nodemon), monitoring any changes in your application with hotreload supports.
+  * `NODE_ENV=production` - backed by [pm2](http://pm2.keymetrics.io/) with `cluster` mode, scale accross all CPUs available.
 - `esnext test` - start executing your `Jest` test specs. Supported options:
   * `--detectLeaks` - **EXPERIMENTAL**: Detect memory leaks in tests. After executing a test, it will try to garbage collect the global object used, and fail if it was leaked.
   * `--detectOpenHandles` - Print out remaining open handles preventing Jest from exiting at the end of a test run.
@@ -87,6 +91,9 @@ describe('<App />', () => {
   "scripts": {
     "lint": "esnext lint",
     "lint:other-folder": "esnext lint other-folder",
+    "start": "yo-env",
+    "start:development": "cross-env DEBUG=* esnext start index.js",
+    "start:production": "esnext start index.js",
     "test": "esnext test"
   },
 ```
