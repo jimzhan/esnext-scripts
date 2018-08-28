@@ -7,7 +7,7 @@ const logdir = path.resolve(basedir, 'logs')
 
 const instances = os.cpus().length
 const memory = os.totalmem() / (1024 ** 3)
-const max_memory_restart = `${memory / instances}G`
+const max_memory_restart = `${Math.round(memory / instances)}G`
 const { name } = require(path.resolve(basedir, 'package.json'))
 
 module.exports = {
