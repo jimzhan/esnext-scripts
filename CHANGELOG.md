@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.22.0"></a>
+# [0.22.0](https://github.com/jimzhan/esnext-scripts/compare/v0.20.0...v0.22.0) (2018-08-28)
+
+
+### Bug Fixes
+
+* **memory:** add rounded amount of memory to restart ([8675f4e](https://github.com/jimzhan/esnext-scripts/commit/8675f4e))
+
+
+### Features
+
+* **pm2:** add full pm2 supports ([a221b85](https://github.com/jimzhan/esnext-scripts/commit/a221b85))
+
+
+
 <a name="0.21.0"></a>
 # [0.21.0](https://github.com/jimzhan/esnext-scripts/compare/v0.20.0...v0.21.0) (2018-08-24)
 
