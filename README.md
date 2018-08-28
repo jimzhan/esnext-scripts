@@ -48,9 +48,10 @@ In my recent mono-repository implementation, I found that really hard and confus
 ### Available commands
 
 - `esnext lint [optional-folder]` - start linting with `airbnb` rules set.
-- `esnext start <script>.js` - start your application server (via the given script file) for:
-  * `NODE_ENV=development` - with builtin [nodemon](https://github.com/remy/nodemon), monitoring any changes in your application with hotreload supports.
-  * `NODE_ENV=production` - backed by [pm2](http://pm2.keymetrics.io/) with `cluster` mode, scale accross all CPUs available.
+- `esnext server <action> [script]` - server process manager for both development (nodemon) and production (pm2).
+  - `start` your application server (via the given script file) for:
+    * `NODE_ENV=development` - with builtin [nodemon](https://github.com/remy/nodemon), monitoring any changes in your application with hotreload supports.
+    * `NODE_ENV=production` - backed by [pm2](http://pm2.keymetrics.io/) with `cluster` mode, scale accross all CPUs available.
 - `esnext test` - start executing your `Jest` test specs. Supported options:
   * `--detectLeaks` - **EXPERIMENTAL**: Detect memory leaks in tests. After executing a test, it will try to garbage collect the global object used, and fail if it was leaked.
   * `--detectOpenHandles` - Print out remaining open handles preventing Jest from exiting at the end of a test run.
