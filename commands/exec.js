@@ -12,7 +12,6 @@ exports.desc = 'execute a Node.js script'
 exports.handler = (argv) => {
   const { script } = argv
   helpers.execute('node', [
-    '--inspect',
     '--require', 'esm',
     script,
   ])
