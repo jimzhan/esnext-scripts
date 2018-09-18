@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.24.0"></a>
+# [0.24.0](https://github.com/jimzhan/esnext-scripts/compare/v0.21.0...v0.24.0) (2018-09-18)
+
+
+### Bug Fixes
+
+* **memory:** add rounded amount of memory to restart ([8675f4e](https://github.com/jimzhan/esnext-scripts/commit/8675f4e))
+
+
+### Features
+
+* **exec:** add `exec` for individual node.js script ([c2e6a3e](https://github.com/jimzhan/esnext-scripts/commit/c2e6a3e))
+* **server:** add pm2 based server scripts ([67d4188](https://github.com/jimzhan/esnext-scripts/commit/67d4188))
+
+
+
 <a name="0.23.0"></a>
 # [0.23.0](https://github.com/jimzhan/esnext-scripts/compare/v0.21.0...v0.23.0) (2018-08-28)
 
