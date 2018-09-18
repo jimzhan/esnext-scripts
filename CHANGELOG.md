@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.25.0"></a>
+# [0.25.0](https://github.com/jimzhan/esnext-scripts/compare/v0.24.3...v0.25.0) (2018-09-18)
+
+
+### Features
+
+* **exec:** remove inspector from exec ([a320bdb](https://github.com/jimzhan/esnext-scripts/commit/a320bdb))
+
+
+
 <a name="0.24.3"></a>
 ## [0.24.3](https://github.com/jimzhan/esnext-scripts/compare/v0.24.2...v0.24.3) (2018-09-18)
 
