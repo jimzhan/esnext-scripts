@@ -40,7 +40,9 @@ yarn add esnext-scripts
 
 ## Why?
 
-In my recent mono-repository implementation, I found that really hard and confusing about play around with the packages built on top of `babel`. Babel is awesome, but it doesn't really fly on mono-repository packages as it applies to package level only, meaning that you'll need to duplicate your `babel` and `jest` settings for each individual packages, which isn't really developer-friendly, so I decided to create one, here it comes :smiley:
+> How much time you had spent on configuring your application boilerplate to make it support the "future" JavaScript spec. each time you start a new project?
+
+> How many times you had been confused by the obsolete `babel` settings (plugins, presets) or even worse, your applications got broken?
 
 
 ## How?
@@ -48,6 +50,7 @@ In my recent mono-repository implementation, I found that really hard and confus
 ### Available commands
 
 - `esnext lint [optional-folder]` - start linting with `airbnb` rules set.
+- `esnext exec <script>` - execute a Node.js script with ESNext supports.
 - `esnext server <action> [script]` - server process manager for both development (nodemon) and production (pm2).
   - `start` your application server (via the given script file) for:
     * `NODE_ENV=development` - with builtin [nodemon](https://github.com/remy/nodemon), monitoring any changes in your application with hotreload supports.
