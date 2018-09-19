@@ -7,7 +7,7 @@ exports.option = [
   ('--detectLeaks', { description: '**EXPERIMENTAL**: Detect memory leaks in tests. After executing a test, it will try to garbage collect the global object used, and fail if it was leaked.' }),
   ('--forceExit', { description: 'Force Jest to exit after all tests have completed running. This is useful when resources set up by test code cannot be adequately cleaned up.' }),
   ('--verbose', { description: 'Display individual test results with the test suite hierarchy' }),
-  ('--detectOpenHandles', { description: 'Print out remaining open handles preventing Jest from exiting at the end of a test run.' }),
+  ('--detectOpenHandles', { description: 'Print out remaining open handles preventing Jest from exiting at the end of a test run.' })
 ]
 
 /**
@@ -16,7 +16,7 @@ exports.option = [
  */
 const prepareArguments = () => {
   const args = [
-    '--config', require.resolve('../etc/jest.config'),
+    '--config', require.resolve('../etc/jest.config')
   ]
   const settings = helpers.getPackageSettings('jest')
   if (settings) {
@@ -26,7 +26,6 @@ const prepareArguments = () => {
   }
   return args
 }
-
 
 /**
  * Execute `jest` test cases with default settings.

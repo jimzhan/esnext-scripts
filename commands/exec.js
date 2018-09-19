@@ -1,6 +1,5 @@
 const helpers = require('./helpers')
 
-
 exports.command = 'exec <script>'
 exports.desc = 'execute a Node.js script'
 
@@ -13,6 +12,6 @@ exports.handler = (argv) => {
   const { script } = argv
   helpers.execute('node', [
     '--require', 'esm',
-    script,
+    script
   ])
 }

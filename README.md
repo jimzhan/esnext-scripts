@@ -4,7 +4,7 @@ Opinionated ESNext application scripts and configurations.
 
 [![build](https://travis-ci.org/jimzhan/esnext-scripts.svg?branch=master)](https://travis-ci.org/jimzhan/esnext-scripts)
 [![npm version](https://badge.fury.io/js/esnext-scripts.svg)](https://www.npmjs.com/package/esnext-scripts)
-[![JavaScript Style Guide](https://camo.githubusercontent.com/387caee7992b38dcac6cb23f87abf0ba139d7101/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f636f64652532307374796c652d616972626e622d626c75652e737667)](https://github.com/airbnb/javascript)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![npm downloads](https://img.shields.io/npm/dt/esnext-scripts.svg)](https://www.npmjs.com/package/esnext-scripts)
 
@@ -32,7 +32,7 @@ yarn add esnext-scripts
   * [babel-preset-react](https://babeljs.io/docs/en/babel-preset-react)
 - A mostly reasonable approach to JavaScript by:
   * [ESLint](https://eslint.org/)
-  * [Airbnb Javascript Style Guide](https://github.com/airbnb/javascript)
+  * [Standard JS tyle Guide](https://standardjs.com)
 - Delightful JavaScript Testing with
   * [Jest](https://github.com/facebook/jest)
   * [Enzyme](https://github.com/airbnb/enzyme)
@@ -49,7 +49,7 @@ yarn add esnext-scripts
 
 ### Available commands
 
-- `esnext lint [optional-folder]` - start linting with `airbnb` rules set.
+- `esnext lint [optional-folder]` - start linting with `standardjs` rules set.
 - `esnext exec <script>` - execute a Node.js script with ESNext supports.
 - `esnext server <action> [script]` - server process manager for both development (nodemon) and production (pm2).
   - `start` your application server (via the given script file) for:

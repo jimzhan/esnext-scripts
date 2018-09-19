@@ -3,10 +3,10 @@ module.exports = {
   rootDir: process.cwd(),
   testEnvironment: 'node',
   transform: {
-    '^.+\\.jsx?$': require.resolve('./jest.transformer.js'),
+    '^.+\\.jsx?$': require.resolve('./jest.transformer.js')
   },
   setupFiles: [
     require.resolve('./jest.setup.js'),
-    require.resolve('./jest.enzyme.js'),
-  ],
+    require.resolve('./jest.enzyme.js')
+  ]
 }

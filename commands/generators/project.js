@@ -24,9 +24,9 @@ const actions = [
       '.eslintrc.js',
       '.yarnrc',
       'package.json',
-      'README.md',
-    ].map(item => path.join(basedir, item)),
-  },
+      'README.md'
+    ].map(item => path.join(basedir, item))
+  }
 ]
 
 // ------------------------------------------------------------
@@ -40,7 +40,7 @@ fs.readdirSync(pkgdir)
       data,
       base: `${pkgdir}/${pkg}`,
       destination: `${out}/packages/{{lowerCase name}}-${pkg}`,
-      templateFiles: `${pkgdir}/${pkg}/**/**`,
+      templateFiles: `${pkgdir}/${pkg}/**/**`
     })
   })
 

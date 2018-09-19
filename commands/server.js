@@ -1,15 +1,12 @@
 const assert = require('assert')
 const helpers = require('./helpers')
 
-
 exports.command = 'server <action> [script]'
 exports.desc = 'Process manager for production server'
 
 const commands = {
-  /* eslint-disable global-require */
   pm2: require.resolve('pm2/bin/pm2'),
-  nodemon: require.resolve('nodemon/bin/nodemon'),
-  /* eslint-enable */
+  nodemon: require.resolve('nodemon/bin/nodemon')
 }
 
 /**
@@ -29,7 +26,7 @@ const startForDevelopment = (script, argv) => { // eslint-disable-line
   helpers.execute(commands.nodemon, [
     '--inspect',
     '--require', 'esm',
-    script,
+    script
   ])
 }
 
@@ -39,9 +36,7 @@ const startForDevelopment = (script, argv) => { // eslint-disable-line
  * @param {Object} argv - `yargs` options.
  */
 const startForProduction = (script, argv) => { // eslint-disable-line
-  /* eslint-disable global-require */
   const pm2 = require('pm2')
-  /* eslint-enable */
   const config = Object.assign({}, getProcessSettings(), { script })
 
   pm2.connect((err) => {
@@ -71,7 +66,6 @@ const start = (script, argv) => {
     startForDevelopment(script, argv)
   }
 }
-
 
 exports.handler = (argv) => {
   const { script } = argv

@@ -1,7 +1,7 @@
 const path = require('path')
 const ora = require('ora')
 const plop = require('node-plop')(
-  path.resolve(__dirname, 'generators', 'plopfile.js'),
+  path.resolve(__dirname, 'generators', 'plopfile.js')
 )
 
 exports.command = 'new <name>'
