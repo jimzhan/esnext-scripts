@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.26.0"></a>
+# [0.26.0](https://github.com/jimzhan/esnext-scripts/compare/v0.25.0...v0.26.0) (2018-09-19)
+
+
+### Features
+
+* **lint:** migrate to `standardjs` ([057a4de](https://github.com/jimzhan/esnext-scripts/commit/057a4de))
+
+
+
 <a name="0.25.0"></a>
 # [0.25.0](https://github.com/jimzhan/esnext-scripts/compare/v0.24.3...v0.25.0) (2018-09-18)
 
