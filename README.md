@@ -32,7 +32,7 @@ yarn add esnext-scripts
   * [babel-preset-react](https://babeljs.io/docs/en/babel-preset-react)
 - A mostly reasonable approach to JavaScript by:
   * [ESLint](https://eslint.org/)
-  * [Standard JS tyle Guide](https://standardjs.com)
+  * [StandardJS Style Guide](https://standardjs.com)
 - Delightful JavaScript Testing with
   * [Jest](https://github.com/facebook/jest)
   * [Enzyme](https://github.com/airbnb/enzyme)
