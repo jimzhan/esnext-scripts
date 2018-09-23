@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.28.0"></a>
+# [0.28.0](https://github.com/jimzhan/esnext-scripts/compare/v0.25.0...v0.28.0) (2018-09-23)
+
+
+### Bug Fixes
+
+* **eslint:** fix eslint `--fix` issue on programmatic linting ([af91018](https://github.com/jimzhan/esnext-scripts/commit/af91018))
+
+
+### Features
+
+* **lint:** migrate to `standardjs` ([057a4de](https://github.com/jimzhan/esnext-scripts/commit/057a4de))
+
+
+
 <a name="0.27.0"></a>
 # [0.27.0](https://github.com/jimzhan/esnext-scripts/compare/v0.25.0...v0.27.0) (2018-09-21)
 
