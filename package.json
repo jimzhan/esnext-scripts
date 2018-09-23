@@ -16,7 +16,7 @@
     "commit": "git-cz",
     "commitmsg": "commitlint --env GIT_PARAMS",
     "release": "git push --follow-tags origin master && npm publish --verbose",
-    "lint": "cross-env DEBUG=esnext-scripts ./bin/esnext.js lint --fix",
+    "lint": "cross-env DEBUG=esnext-scripts ./bin/esnext.js lint",
     "test": "cross-env DEBUG=esnext-scripts ./bin/esnext.js test"
   },
   "commitlint": {
@@ -119,7 +119,6 @@
     "react",
     "enzyme",
     "eslint",
-    "airbnb",
     "skeleton",
     "template",
     "test",

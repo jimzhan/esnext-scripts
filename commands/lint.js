@@ -6,25 +6,18 @@ const helpers = require('./helpers')
  * @param {String} dir - directory to perform linting.
  * @param {Object} argv - `yargs` options.
  */
-const lintFromApi = (dir, argv) => { // eslint-disable-line
-  const options = require('../.eslintrc') // eslint-disable-line
-  const eslint = new CLIEngine(Object.assign({
-    fix: !!argv.fix, // @FIXME doesn't really work.
+const lintFromApi = (dir, argv) => {
+  const fix = argv.fix === true
+  const eslint = new CLIEngine(Object.assign({}, {
+    fix,
     extensions: ['.js', '.jsx']
-  }, options))
-  const { log } = console
-  const { results } = eslint.executeOnFiles([dir])
-  const formatter = eslint.getFormatter('stylish')
-  const output = formatter(results)
-  if (output) log(output)
-  helpers.info(`--fix ${argv.fix}`)
+  }, require('../etc/eslint.config')))
+  const report = eslint.executeOnFiles([dir])
+  const output = eslint.getFormatter('stylish')(report.results)
+  if (output) console.log(output)
+  if (fix) CLIEngine.outputFixes(report)
 }
 
-/**
- * Execute `eslint` from CLI.
- * @param {String} dir - directory to perform linting.
- * @param {Object} argv - `yargs` options.
- */
 const lintFromCli = (dir, argv) => { // eslint-disable-line
   const args = [
     dir,
@@ -45,7 +38,8 @@ exports.desc = 'Start linting using pre-defined rules set'
  */
 exports.handler = (argv) => {
   const dir = argv.dir || process.cwd()
-  lintFromCli(dir, argv)
+  // lintFromCli(dir, argv)
+  lintFromApi(dir, argv)
 }
 
 /*
