@@ -51,10 +51,13 @@ yarn add esnext-scripts
 
 - `esnext lint [optional-folder]` - start linting with `standardjs` rules set.
 - `esnext exec <script>` - execute a Node.js script with ESNext supports.
-- `esnext server <action> [script]` - server process manager for both development (nodemon) and production (pm2).
+- `esnext start [script]` - server process manager for both development (nodemon) and production (pm2).
   - `start` your application server (via the given script file) for:
     * `NODE_ENV=development` - with builtin [nodemon](https://github.com/remy/nodemon), monitoring any changes in your application with hotreload supports.
     * `NODE_ENV=production` - backed by [pm2](http://pm2.keymetrics.io/) with `cluster` mode, scale accross all CPUs available.
+- `esnext stop [name]` - synonym to `pm2 stop [name]` (`name` in cwd's `package.json` as fallback).
+- `esnext kill` - synonym to `pm2 kill`.
+- `esnext list` - synonym to `pm2 list`.
 - `esnext test` - start executing your `Jest` test specs. Supported options:
   * `--detectLeaks` - **EXPERIMENTAL**: Detect memory leaks in tests. After executing a test, it will try to garbage collect the global object used, and fail if it was leaked.
   * `--detectOpenHandles` - Print out remaining open handles preventing Jest from exiting at the end of a test run.

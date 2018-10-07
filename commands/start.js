@@ -6,13 +6,6 @@ exports.command = 'start [script]'
 exports.desc = 'Process manager for production server'
 
 const { cmd } = consts
-/**
- * Merge process settings for `pm2`.
- */
-const getProcessSettings = () => {
-  const { apps } = require('../etc/process.config') // eslint-disable-line
-  return Object.assign({}, ...apps)
-}
 
 /**
  * Start a development process with ESM supports for the given application.
@@ -35,7 +28,8 @@ const startForDevelopment = (script, argv) => { // eslint-disable-line
  */
 const startForProduction = (script, argv) => { // eslint-disable-line
   const pm2 = require('pm2')
-  const config = Object.assign({}, getProcessSettings(), { script })
+  const { apps } = require('../etc/process.config')
+  const config = Object.assign({}, ...apps, { script })
 
   pm2.connect((err) => {
     if (err) {
@@ -59,7 +53,6 @@ const startForProduction = (script, argv) => { // eslint-disable-line
  */
 exports.handler = (argv) => {
   const { script } = argv
-
   assert(script, '[script] is missing')
   if (process.env.NODE_ENV === 'production') {
     startForProduction(script, argv)
