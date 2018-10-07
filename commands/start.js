@@ -1,14 +1,11 @@
 const assert = require('assert')
+const consts = require('../consts')
 const helpers = require('./helpers')
 
-exports.command = 'server <action> [script]'
+exports.command = 'start [script]'
 exports.desc = 'Process manager for production server'
 
-const commands = {
-  pm2: require.resolve('pm2/bin/pm2'),
-  nodemon: require.resolve('nodemon/bin/nodemon')
-}
-
+const { cmd } = consts
 /**
  * Merge process settings for `pm2`.
  */
@@ -23,9 +20,10 @@ const getProcessSettings = () => {
  * @param {Object} argv - `yargs` options.
  */
 const startForDevelopment = (script, argv) => { // eslint-disable-line
-  helpers.execute(commands.nodemon, [
+  helpers.execute(cmd.nodemon, [
     '--inspect',
     '--require', 'esm',
+    '--require', 'dotenv/config',
     script
   ])
 }
@@ -47,7 +45,7 @@ const startForProduction = (script, argv) => { // eslint-disable-line
     pm2.start(config, (ex) => {
       if (ex) throw ex
       pm2.disconnect()
-      helpers.execute(commands.pm2, ['list'])
+      helpers.execute(cmd.pm2, ['list'])
     })
   })
 }
@@ -59,38 +57,13 @@ const startForProduction = (script, argv) => { // eslint-disable-line
  * @param {String} app - applicaton entry to start with.
  * @param {Object} argv - `yargs` options.
  */
-const start = (script, argv) => {
+exports.handler = (argv) => {
+  const { script } = argv
+
+  assert(script, '[script] is missing')
   if (process.env.NODE_ENV === 'production') {
     startForProduction(script, argv)
   } else {
     startForDevelopment(script, argv)
-  }
-}
-
-exports.handler = (argv) => {
-  const { script } = argv
-  const { error } = console
-  const config = getProcessSettings()
-
-  switch (argv.action) {
-    case 'start':
-      assert(script, '[script] is missing')
-      start(script)
-      break
-
-    case 'stop':
-      helpers.execute(commands.pm2, ['stop', config.name])
-      break
-
-    case 'list':
-      helpers.execute(commands.pm2, ['list'])
-      break
-
-    case 'kill':
-      helpers.execute(commands.pm2, ['kill'])
-      break
-
-    default:
-      error(`unknown <action: ${argv.action}>`)
   }
 }
