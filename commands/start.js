@@ -1,24 +1,40 @@
+const fs = require('fs')
+const path = require('path')
 const assert = require('assert')
+const dotenv = require('dotenv')
 const consts = require('../consts')
 const helpers = require('./helpers')
 
 exports.command = 'start [script]'
 exports.desc = 'Process manager for production server'
+exports.option = [
+  ('--env', { description: 'specify custom settings file instead default `.env` under cwd.' })
+]
 
 const { cmd } = consts
+
+/**
+ * Get optional `env` value from `argv` for custom `.env` file supports.
+ * @param {String} argv.env - optional file path to custom `.env` file.
+ */
+const getOptionalEnv = ({ env }) => (env && typeof env === 'string') ? env : undefined
 
 /**
  * Start a development process with ESM supports for the given application.
  * @param {String} script - application entry to start with.
  * @param {Object} argv - `yargs` options.
  */
-const startForDevelopment = (script, argv) => { // eslint-disable-line
-  helpers.execute(cmd.nodemon, [
+const startForDevelopment = (script, argv) => {
+  const env = getOptionalEnv(argv)
+  const args = [
     '--inspect',
     '--require', 'esm',
     '--require', 'dotenv/config',
     script
-  ])
+  ]
+  if (env) args.push(`dotenv_config_path=${env}`)
+  console.log(args)
+  helpers.execute(cmd.nodemon, args)
 }
 
 /**
@@ -26,11 +42,20 @@ const startForDevelopment = (script, argv) => { // eslint-disable-line
  * @param {String} app - applicaton entry to start with.
  * @param {Object} argv - `yargs` options.
  */
-const startForProduction = (script, argv) => { // eslint-disable-line
+const startForProduction = (script, argv) => {
   const pm2 = require('pm2')
+  const env = getOptionalEnv(argv)
   const { apps } = require('../etc/process.config')
   const config = Object.assign({}, ...apps, { script })
-
+  if (env) {
+    const abspath = path.resolve(env)
+    if (fs.existsSync(abspath)) {
+      helpers.info(`Adding additional settings from: ${env}`)
+      dotenv.config({ path: abspath })
+    } else {
+      helpers.debug(`Invalid dotenv file: ${env}`)
+    }
+  }
   pm2.connect((err) => {
     if (err) {
       helpers.error(err)

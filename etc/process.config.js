@@ -20,7 +20,7 @@ module.exports = {
     max_memory_restart,
     error_file: path.resolve(logdir, 'err.log'),
     out_file: path.resolve(logdir, 'out.log'),
-    node_args: '-r esm -r dotenv/config',
+    node_args: '-r esm',
     merge_logs: true
   }],
 }
