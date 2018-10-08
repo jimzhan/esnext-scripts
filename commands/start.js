@@ -33,7 +33,6 @@ const startForDevelopment = (script, argv) => {
     script
   ]
   if (env) args.push(`dotenv_config_path=${env}`)
-  console.log(args)
   helpers.execute(cmd.nodemon, args)
 }
 
