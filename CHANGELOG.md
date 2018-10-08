@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.30.1"></a>
+## [0.30.1](https://github.com/jimzhan/esnext-scripts/compare/v0.30.0...v0.30.1) (2018-10-08)
+
+
+### Bug Fixes
+
+* correct abspath to custom `env` ([e5a9a40](https://github.com/jimzhan/esnext-scripts/commit/e5a9a40))
+
+
+
 <a name="0.30.0"></a>
 # [0.30.0](https://github.com/jimzhan/esnext-scripts/compare/v0.28.2...v0.30.0) (2018-10-08)
 
