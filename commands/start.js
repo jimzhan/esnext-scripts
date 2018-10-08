@@ -17,7 +17,9 @@ const { cmd } = consts
  * Get optional `env` value from `argv` for custom `.env` file supports.
  * @param {String} argv.env - optional file path to custom `.env` file.
  */
-const getOptionalEnv = ({ env }) => (env && typeof env === 'string') ? env : undefined
+const getOptionalEnv = ({ env }) => {
+  return (env && typeof env === 'string') ? path.resolve(env) : undefined
+}
 
 /**
  * Start a development process with ESM supports for the given application.
@@ -47,10 +49,9 @@ const startForProduction = (script, argv) => {
   const { apps } = require('../etc/process.config')
   const config = Object.assign({}, ...apps, { script })
   if (env) {
-    const abspath = path.resolve(env)
-    if (fs.existsSync(abspath)) {
+    if (fs.existsSync(env)) {
       helpers.info(`Adding additional settings from: ${env}`)
-      dotenv.config({ path: abspath })
+      dotenv.config({ path: env })
     } else {
       helpers.debug(`Invalid dotenv file: ${env}`)
     }
