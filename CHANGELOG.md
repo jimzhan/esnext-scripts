@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.29.0"></a>
+# [0.29.0](https://github.com/jimzhan/esnext-scripts/compare/v0.28.1...v0.29.0) (2018-10-08)
+
+
+### Features
+
+* enable `dotenv` supports ([5188a0c](https://github.com/jimzhan/esnext-scripts/commit/5188a0c))
+
+
+
 <a name="0.28.2"></a>
 ## [0.28.2](https://github.com/jimzhan/esnext-scripts/compare/v0.28.1...v0.28.2) (2018-10-07)
 
