@@ -11,7 +11,6 @@
     "esnext-scripts": "./bin/esnext.js"
   },
   "scripts": {
-    "postinstall": "pm2 install pm2-logrotate",
     "precommit": "lint-staged",
     "prepush": "yarn test && npx standard-version --no-verify",
     "commit": "git-cz",
