@@ -1,4 +1,3 @@
-/* eslint-disable */
 const os = require('os')
 const path = require('path')
 const consts = require('../consts')
@@ -7,7 +6,7 @@ const logdir = path.resolve(consts.basedir, 'logs')
 
 const instances = os.cpus().length
 const memory = os.totalmem() / (1024 ** 3)
-const max_memory_restart = `${Math.round(memory / instances)}G`
+const max_memory_restart = `${Math.round(memory / instances)}G` // eslint-disable-line
 const { name } = require(consts.package)
 
 module.exports = {
@@ -22,5 +21,5 @@ module.exports = {
     out_file: path.resolve(logdir, 'out.log'),
     node_args: '-r esm',
     merge_logs: true
-  }],
+  }]
 }

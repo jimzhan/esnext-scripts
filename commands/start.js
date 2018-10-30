@@ -8,7 +8,8 @@ const helpers = require('./helpers')
 exports.command = 'start [script]'
 exports.desc = 'Process manager for production server'
 exports.option = [
-  ('--env', { description: 'specify custom settings file instead default `.env` under cwd.' })
+  ('--env', { description: 'specify custom settings file instead default `.env` under cwd.' }),
+  ('--config', { description: 'specify custom settings file for pm2 under `NODE_ENV=production`.' })
 ]
 
 const { cmd } = consts
@@ -46,8 +47,8 @@ const startForDevelopment = (script, argv) => {
 const startForProduction = (script, argv) => {
   const pm2 = require('pm2')
   const env = getOptionalEnv(argv)
-  const { apps } = require('../etc/process.config')
-  const config = Object.assign({}, ...apps, { script })
+  const settings = require(argv.config || '../etc/process.config')
+  const config = Object.assign({}, ...settings, { script })
   if (env) {
     if (fs.existsSync(env)) {
       helpers.info(`Adding additional settings from: ${env}`)
