@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.32.0"></a>
+# [0.32.0](https://github.com/jimzhan/esnext-scripts/compare/v0.31.0...v0.32.0) (2018-10-30)
+
+
+### Features
+
+* enable pm2 logrotate along with custom settings ([56fd269](https://github.com/jimzhan/esnext-scripts/commit/56fd269))
+
+
+
 <a name="0.31.0"></a>
 # [0.31.0](https://github.com/jimzhan/esnext-scripts/compare/v0.30.0...v0.31.0) (2018-10-25)
 
