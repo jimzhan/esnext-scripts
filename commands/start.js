@@ -47,8 +47,10 @@ const startForDevelopment = (script, argv) => {
 const startForProduction = (script, argv) => {
   const pm2 = require('pm2')
   const env = getOptionalEnv(argv)
-  const settings = require(argv.config || '../etc/process.config')
-  const config = Object.assign({}, ...settings, { script })
+  const { apps } = require(
+    argv.config ? path.resolve(process.cwd(), argv.config) : '../etc/process.config.js'
+  )
+  const config = Object.assign({}, ...apps, { script })
   if (env) {
     if (fs.existsSync(env)) {
       helpers.info(`Adding additional settings from: ${env}`)
