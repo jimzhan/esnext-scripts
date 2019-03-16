@@ -1,1 +1,4 @@
-module.exports = require('babel-jest').createTransformer(require('./babel.config'))
+const jest = require('babel-jest')
+const config = require('./babel.config')
+
+module.exports = jest.createTransformer(config)

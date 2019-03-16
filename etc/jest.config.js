@@ -1,12 +1,13 @@
+const { consts } = require('../lib')
+const { cwd, config } = consts
+
 module.exports = {
+  json: false,
   verbose: true,
-  rootDir: process.cwd(),
+  rootDir: cwd,
+  setupFiles: [config.jest.enzyme],
   testEnvironment: 'node',
-  transform: {
-    '^.+\\.jsx?$': require.resolve('./jest.transformer.js')
-  },
-  setupFiles: [
-    require.resolve('./jest.setup.js'),
-    require.resolve('./jest.enzyme.js')
-  ]
+  transform: JSON.stringify({
+    '^.+\\.jsx?$': config.jest.transformer
+  })
 }

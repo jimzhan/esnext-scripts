@@ -1,5 +1,7 @@
-const eslint = require('./etc/eslint.config')
+const config = {
+  eslint: require('./etc/eslint.config')
+}
 
-exports.config = {
-  eslint
+module.exports = {
+  config
 }

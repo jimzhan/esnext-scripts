@@ -23,16 +23,16 @@ yarn add esnext-scripts
 
 ## What?
 
-`esnext-scripts` is set of pre-configured helpers for your next generation Javascript application. With it, you can now fully focus on your valuable implementations instead of playing around with various settings & helpers again & again. Batteries included:
+`esnext-scripts` is set of pre-configured helpers for your next generation Javascript application. With it, you can now fully focus on your valuable implementations instead of playing around with various settings & helpers over and over again. Batteries included:
 
 - Latest EMACScript supports backed by:
-  * [esm](https://github.com/standard-things/esm)
   * [babel-preset-env](https://babeljs.io/docs/en/babel-preset-env/)
   * [babel-preset-stage-1](https://babeljs.io/docs/en/babel-preset-stage-1)
   * [babel-preset-react](https://babeljs.io/docs/en/babel-preset-react)
 - A mostly reasonable approach to JavaScript by:
   * [ESLint](https://eslint.org/)
   * [StandardJS Style Guide](https://standardjs.com)
+  * [Prettier](https://prettier.io/)
 - Delightful JavaScript Testing with
   * [Jest](https://github.com/facebook/jest)
   * [Enzyme](https://github.com/airbnb/enzyme)
@@ -49,22 +49,12 @@ yarn add esnext-scripts
 
 ### Available commands
 
-- `esnext lint [optional-folder]` - start linting with `standardjs` rules set.
+
+- `esnext build <src> <out>` - compile an input directory of modules into an output directory.
 - `esnext exec <script>` - execute a Node.js script with ESNext supports.
-- `esnext start [script]` - server process manager for both development (nodemon) and production (pm2) with [dotenv](https://github.com/motdotla/dotenv) supports.
-  - `start` your application server (via the given script file) for:
-    * `NODE_ENV=development` - with builtin [nodemon](https://github.com/remy/nodemon), monitoring any changes in your application with hotreload supports.
-    * `NODE_ENV=production` - backed by [pm2](http://pm2.keymetrics.io/) with `cluster` mode, scale accross all CPUs available.
-    * **NOTE** By default, `esnext start [script]` will read `.env` under `process.cwd()`, `--env <custom-dotenv-path>` is also supported.
-- `esnext stop [name]` - synonym to `pm2 stop [name]` (`name` in cwd's `package.json` as fallback).
-- `esnext kill` - synonym to `pm2 kill`.
-- `esnext list` - synonym to `pm2 list`.
-- `esnext test` - start executing your `Jest` test specs. Supported options:
-  * `--detectLeaks` - **EXPERIMENTAL**: Detect memory leaks in tests. After executing a test, it will try to garbage collect the global object used, and fail if it was leaked.
-  * `--detectOpenHandles` - Print out remaining open handles preventing Jest from exiting at the end of a test run.
-  * `--forceExit` - Force Jest to exit after all tests have completed running. This is useful when resources set up by test code cannot be.
-  * `--watch` - Watch files for changes and rerun tests related to changed files.
-  * `--verbose` - Display individual test results with the test suite hierarchy.
+- `esnext format <glob>` - format files find by the given `glob` pattern via `prettier`.
+- `esnext lint [optional-folder]` - start linting with `standardjs` rules set.
+- `esnext test` - start executing your `Jest` test specs.
 
 
 ### Sample Usage
@@ -72,13 +62,12 @@ yarn add esnext-scripts
 A sample structure of React application folder.
 
 ```
-- __tests__/
-    App.spec.jsx
 - src/
     App.jsx
+    App.test.jsx
 ```
 
-`App.spec.jsx`.
+`App.test.jsx`.
 
 ```javascript
 import React from 'react'
@@ -86,7 +75,7 @@ import { shallow } from 'enzyme'
 import App from './App'
 
 describe('<App />', () => {
-  it('renders three <Foo /> components', () => {
+  it('renders <App /> component', () => {
     const wrapper = shallow(<App>Application</App>)
     expect(wrapper).toBeTruthy()
   })
@@ -96,42 +85,26 @@ describe('<App />', () => {
 `package.json`.
 
 ```json
+  "lint-staged": {
+    "**/*.{js,jsx}": [
+      "esnext format 'src/**/*.js",
+      "esnext lint --fix"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "precommit": "lint-staged",
+      "commitmsg": "commitlint --env HUSKY_GIT_PARAMS"
+    }
+  },
   "scripts": {
     "lint": "esnext lint",
     "lint:other-folder": "esnext lint other-folder",
-    "start": "yo-env",
-    "start:development": "cross-env DEBUG=* esnext start index.js",
-    "start:production": "esnext start index.js",
     "test": "esnext test"
   },
 ```
 
 
-## Configuration
-
-* Configure your `jest` via `package.json`
-
-```json
-"jest": {
-    "collectCoverage": true,
-    "collectCoverageFrom": [
-      "**/*.{js}",
-      "!**/node_modules/**"
-    ],
-    "coverageThreshold": {
-      "global": {
-        "branches": 100,
-        "functions": 100,
-        "lines": 100,
-        "statements": 100
-      }
-    }
-  }
-}
-```
-
-**NOTE** All these settings will be stringified from JSON to `string` then passed to `jest.runCLI`, since `jest` does not support any programmatic way for calling at the moment.
-
 ### License
 
-> MIT License 2018 © Jim Zhan
+> MIT License 2019 © Jim Zhan

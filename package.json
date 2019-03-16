@@ -1,104 +1,14 @@
 {
   "name": "esnext-scripts",
-  "version": "0.32.2",
+  "version": "1.0.0",
   "description": "Opinionated ESNext application scripts and configurations",
-  "main": "bin/cli.js",
-  "repository": "https://github.com/jimzhan/esnext-scripts",
-  "author": "Jim Zhan <jim.zhan@me.com>",
-  "license": "MIT",
+  "main": "cmd.js",
   "bin": {
-    "esnext": "./bin/esnext.js",
-    "esnext-scripts": "./bin/esnext.js"
+    "esnext": "./cmd.js",
+    "esnext-scripts": "./cmd.js"
   },
-  "scripts": {
-    "precommit": "lint-staged",
-    "prepush": "yarn test && npx standard-version --no-verify",
-    "commit": "git-cz",
-    "commitmsg": "commitlint --env GIT_PARAMS",
-    "release": "git push --follow-tags origin master && npm publish --verbose",
-    "lint": "cross-env DEBUG=esnext-scripts ./bin/esnext.js lint",
-    "test": "cross-env DEBUG=esnext-scripts ./bin/esnext.js test"
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
-  "config": {
-    "commitizen": {
-      "path": "cz-conventional-changelog"
-    }
-  },
-  "lint-staged": {
-    "**/*.{js,jsx}": [
-      "eslint --fix"
-    ]
-  },
-  "jest": {
-    "collectCoverage": false,
-    "collectCoverageFrom": [
-      "tasks/**/*.{js}",
-      "!tasks/jest.js",
-      "!tasks/lint.js",
-      "!**/node_modules/**"
-    ],
-    "coverageThreshold": {
-      "global": {
-        "branches": 100,
-        "functions": 100,
-        "lines": 100,
-        "statements": 100
-      }
-    }
-  },
-  "resolutions": {
-    "gkt": "1.0.0"
-  },
-  "dependencies": {
-    "assert": "^1.4.1",
-    "babel-core": "^6.26.3",
-    "babel-eslint": "^8.2.6",
-    "babel-jest": "^23.4.2",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-1": "^6.24.1",
-    "babel-register": "^6.26.0",
-    "cross-env": "^5.2.0",
-    "debug": "^3.1.0",
-    "dotenv": "^6.0.0",
-    "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1",
-    "eslint": "^5.6.0",
-    "eslint-config-standard": "^12.0.0",
-    "eslint-config-standard-react": "^7.0.2",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-node": "^7.0.1",
-    "eslint-plugin-promise": "^4.0.1",
-    "eslint-plugin-react": "^7.11.1",
-    "eslint-plugin-standard": "^4.0.0",
-    "esm": "^3.0.76",
-    "execa": "^0.10.0",
-    "gkt": "1.0.0",
-    "jest-cli": "^23.5.0",
-    "koa": "^2.5.2",
-    "log-symbols": "^2.2.0",
-    "node-plop": "^0.16.0",
-    "nodemon": "^1.18.3",
-    "ora": "^3.0.0",
-    "pm2": "^3.0.3",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
-    "uid-safe": "^2.1.5",
-    "yargs": "^12.0.1"
-  },
-  "devDependencies": {
-    "@commitlint/cli": "^7.0.0",
-    "@commitlint/config-conventional": "^7.0.1",
-    "commitizen": "^2.10.1",
-    "cz-conventional-changelog": "^2.1.0",
-    "husky": "^0.14.3",
-    "lint-staged": "^7.2.0",
-    "standard-version": "^4.4.0"
+  "directories": {
+    "lib": "lib"
   },
   "keywords": [
     "zero-configuration",
@@ -125,5 +35,98 @@
     "template",
     "test",
     "lint"
-  ]
+  ],
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,jsx}": [
+      "eslint --fix"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "precommit": "lint-staged",
+      "commitmsg": "commitlint --env HUSKY_GIT_PARAMS"
+    }
+  },
+  "scripts": {
+    "commit": "git-cz",
+    "format": "cross-env DEBUG=esnext-scripts ./cmd.js format './**/*.js'",
+    "lint": "cross-env DEBUG=esnext-scripts ./cmd.js lint",
+    "test": "cross-env DEBUG=esnext-scripts ./cmd.js test",
+    "prerelease": "standard-version",
+    "release": "git push --follow-tags origin master && npm publish --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jimzhan/esnext-scripts.git"
+  },
+  "author": "Jim Zhan <jim.zhan@me.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/jimzhan/esnext-scripts/issues"
+  },
+  "homepage": "https://github.com/jimzhan/esnext-scripts#readme",
+  "dependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/node": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-decorators": "^7.0.0",
+    "@babel/plugin-proposal-do-expressions": "^7.0.0",
+    "@babel/plugin-proposal-export-default-from": "^7.0.0",
+    "@babel/plugin-proposal-export-namespace-from": "^7.0.0",
+    "@babel/plugin-proposal-function-sent": "^7.0.0",
+    "@babel/plugin-proposal-json-strings": "^7.0.0",
+    "@babel/plugin-proposal-logical-assignment-operators": "^7.0.0",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.0.0",
+    "@babel/plugin-proposal-numeric-separator": "^7.0.0",
+    "@babel/plugin-proposal-optional-chaining": "^7.0.0",
+    "@babel/plugin-proposal-pipeline-operator": "^7.0.0",
+    "@babel/plugin-proposal-throw-expressions": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/plugin-syntax-import-meta": "^7.0.0",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.4.2",
+    "cross-env": "^5.2.0",
+    "debug": "^4.1.1",
+    "enzyme-adapter-react-16": "^1.11.2",
+    "eslint": "^5.15.1",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-config-standard-react": "^7.0.2",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-standard": "^4.0.0",
+    "execa": "^1.0.0",
+    "jest": "^24.5.0",
+    "jest-cli": "^24.5.0",
+    "log-symbols": "^2.2.0",
+    "nodemon": "^1.18.10",
+    "prettier-standard": "^9.1.1",
+    "yargs": "^13.2.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^7.5.2",
+    "@commitlint/config-conventional": "^7.5.0",
+    "commitizen": "^3.0.7",
+    "cz-conventional-changelog": "^2.1.0",
+    "enzyme": "^3.9.0",
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.5",
+    "react": "^16.8.4",
+    "standard-version": "^5.0.1"
+  }
 }

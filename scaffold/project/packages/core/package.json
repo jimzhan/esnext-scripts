@@ -1,9 +1,0 @@
-{
-  "name": "@{{ name }}/core",
-  "version": "{{ version }}",
-  "main": "index.js",
-  "license": "MIT",
-  "dependencies": {
-    "esnext-scripts": "^0.11.1"
-  }
-}
