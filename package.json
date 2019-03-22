@@ -1,6 +1,6 @@
 {
   "name": "esnext-scripts",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Opinionated ESNext application scripts and configurations",
   "main": "cmd.js",
   "bin": {
