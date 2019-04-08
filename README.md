@@ -94,8 +94,8 @@ describe('<App />', () => {
   },
   "husky": {
     "hooks": {
-      "precommit": "lint-staged",
-      "commitmsg": "commitlint --env HUSKY_GIT_PARAMS"
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint --env HUSKY_GIT_PARAMS"
     }
   },
   "scripts": {
