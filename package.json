@@ -27,8 +27,8 @@
   },
   "husky": {
     "hooks": {
-      "precommit": "lint-staged",
-      "commitmsg": "commitlint --env HUSKY_GIT_PARAMS"
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint --env HUSKY_GIT_PARAMS"
     }
   },
   "scripts": {
@@ -72,7 +72,7 @@
     "@babel/preset-react": "^7.0.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
-    "babel-jest": "^23.4.2",
+    "babel-jest": "^24.7.1",
     "cross-env": "^5.2.0",
     "debug": "^4.1.1",
     "enzyme": "^3.9.0",
