@@ -26,6 +26,8 @@ exports.handler = argv => {
       '--inspect',
       '--exec',
       cmd.babelNode,
+      '--config-file',
+      config.babel,
       script
     )
   } else {
