@@ -1,7 +1,3 @@
-const config = {
+exports = module.exports = {
   eslint: require('./etc/eslint.config')
-}
-
-module.exports = {
-  config
 }

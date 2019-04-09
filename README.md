@@ -58,9 +58,24 @@ yarn add esnext-scripts
 - `esnext test` - start executing your `Jest` test specs.
 
 
+### Available config
+
+
+- `eslint`
+
+
 ### Sample Usage
 
-A sample structure of React application folder.
+1. `.eslintrc.js`
+
+```
+const config = require('esnext-scripts')
+
+module.exports = config.eslint
+```
+
+
+2. A sample structure of React application folder.
 
 ```
 - src/

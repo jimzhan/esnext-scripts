@@ -2,7 +2,7 @@
   "name": "esnext-scripts",
   "version": "1.1.0",
   "description": "Opinionated ESNext application scripts and configurations",
-  "main": "cmd.js",
+  "main": "index.js",
   "bin": {
     "esnext": "./cmd.js",
     "esnext-scripts": "./cmd.js"
