@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.1.0"></a>
+# [1.1.0](https://github.com/jimzhan/esnext-scripts/compare/v1.0.8...v1.1.0) (2019-04-09)
+
+
+### Features
+
+* add `nodemon` supports ([82cf5c3](https://github.com/jimzhan/esnext-scripts/commit/82cf5c3))
+
+
+
 <a name="1.0.8"></a>
 ## [1.0.8](https://github.com/jimzhan/esnext-scripts/compare/v1.0.7...v1.0.8) (2019-04-08)
 
