@@ -57,7 +57,7 @@ yarn add esnext-scripts
 - `esnext lint [optional-folder]` - start linting with `standardjs` rules set.
 - `esnext test` - start executing your `Jest` test specs, custom settings supported via (by order):
   - `<cwd>/jest.config.js`
-  - `<cwd>/package.json#namespace`
+  - `<cwd>/package.json#jest`
 
 
 ### Available config
