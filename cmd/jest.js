@@ -1,6 +1,9 @@
 const jest = require('jest-cli')
-const config = require('../etc/jest.config')
-const { consts } = require('../lib')
+const merge = require('deepmerge')
+const { consts, helpers } = require('../lib')
+
+const filename = 'jest.config.js'
+const namespace = 'jest'
 
 exports.command = 'test'
 exports.desc = 'run `jest` test specs'
@@ -10,13 +13,13 @@ exports.desc = 'run `jest` test specs'
  * @param {Object} argv - `yargs` options.
  * @TODO - custom options.
  */
-exports.handler = argv => {
-  jest.runCLI(
-    config,
-    [consts.cwd]
-  ).then(({ results }) => {
-    if (!results.success) {
-      process.exitCode = 1
-    }
-  })
+exports.handler = async argv => {
+  const options = await helpers.readSettings({ filename, namespace })
+  const config = merge(options, require('../etc/jest.config'))
+
+  const { results } = await jest.runCLI(config, [consts.cwd])
+
+  if (!results.success) {
+    process.exitCode = 1
+  }
 }

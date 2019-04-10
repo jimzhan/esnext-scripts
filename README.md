@@ -55,7 +55,9 @@ yarn add esnext-scripts
 - `esnext exec <script> [--watch]` - execute a Node.js script with ESNext supports **NOTE** for development ONLY.
 - `esnext format <glob>` - format files find by the given `glob` pattern via `prettier`.
 - `esnext lint [optional-folder]` - start linting with `standardjs` rules set.
-- `esnext test` - start executing your `Jest` test specs.
+- `esnext test` - start executing your `Jest` test specs, custom settings supported via (by order):
+  - `<cwd>/jest.config.js`
+  - `<cwd>/package.json#namespace`
 
 
 ### Available config
