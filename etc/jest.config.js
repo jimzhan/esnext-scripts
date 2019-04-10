@@ -7,6 +7,11 @@ module.exports = {
   rootDir: cwd,
   setupFiles: [config.jest.enzyme],
   testEnvironment: 'node',
+  testPathIgnorePatterns: [
+    '<rootDir>/build/',
+    '<rootDir>/dist/',
+    '<rootDir>/node_modules/'
+  ],
   transform: JSON.stringify({
     '^.+\\.jsx?$': config.jest.transformer
   })
