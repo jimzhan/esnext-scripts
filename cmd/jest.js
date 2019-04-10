@@ -10,4 +10,13 @@ exports.desc = 'run `jest` test specs'
  * @param {Object} argv - `yargs` options.
  * @TODO - custom options.
  */
-exports.handler = argv => jest.runCLI(config, [consts.cwd])
+exports.handler = argv => {
+  jest.runCLI(
+    config,
+    [consts.cwd]
+  ).then(results => {
+    if (!results.success) {
+      process.exitCode = 1
+    }
+  })
+}
