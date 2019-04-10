@@ -1,6 +1,6 @@
 {
   "name": "esnext-scripts",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Opinionated ESNext application scripts and configurations",
   "main": "index.js",
   "bin": {
