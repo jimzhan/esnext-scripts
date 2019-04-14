@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.4](https://github.com/jimzhan/esnext-scripts/compare/v1.2.3...v1.2.4) (2019-04-14)
+
+
+### Bug Fixes
+
+* enable error exitCode on eslint ([9ff5f58](https://github.com/jimzhan/esnext-scripts/commit/9ff5f58))
+
+
+
 ## [1.2.3](https://github.com/jimzhan/esnext-scripts/compare/v1.2.2...v1.2.3) (2019-04-10)
 
 
