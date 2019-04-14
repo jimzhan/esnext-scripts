@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [1.3.0](https://github.com/jimzhan/esnext-scripts/compare/v1.2.4...v1.3.0) (2019-04-14)
+
+
+### Features
+
+* add security presets to eslint ([a4a2bcf](https://github.com/jimzhan/esnext-scripts/commit/a4a2bcf))
+
+
+
 ## [1.2.4](https://github.com/jimzhan/esnext-scripts/compare/v1.2.3...v1.2.4) (2019-04-14)
 
 
