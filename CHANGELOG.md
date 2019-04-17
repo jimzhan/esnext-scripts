@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.1](https://github.com/jimzhan/esnext-scripts/compare/v1.3.0...v1.3.1) (2019-04-17)
+
+
+### Bug Fixes
+
+* disable security checkpoint to fs ([b4c83f7](https://github.com/jimzhan/esnext-scripts/commit/b4c83f7))
+* jscript compilation issue on win32/nodemon ([c78eb9c](https://github.com/jimzhan/esnext-scripts/commit/c78eb9c))
+
+
+
 # [1.3.0](https://github.com/jimzhan/esnext-scripts/compare/v1.2.4...v1.3.0) (2019-04-14)
 
 
