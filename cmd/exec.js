@@ -23,9 +23,9 @@ exports.handler = argv => {
   if (argv.watch) {
     helpers.execute(
       cmd.nodemon,
-      '--inspect',
       '--exec',
-      cmd.babelNode,
+      'babel-node',
+      '--inspect',
       '--config-file',
       config.babel,
       script
