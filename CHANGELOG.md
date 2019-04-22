@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.2](https://github.com/jimzhan/esnext-scripts/compare/v1.3.1...v1.3.2) (2019-04-22)
+
+
+### Bug Fixes
+
+* enable exit code for both success & failure (jest) ([c3684d1](https://github.com/jimzhan/esnext-scripts/commit/c3684d1))
+
+
+
 ## [1.3.1](https://github.com/jimzhan/esnext-scripts/compare/v1.3.0...v1.3.1) (2019-04-17)
 
 
