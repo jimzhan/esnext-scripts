@@ -19,7 +19,5 @@ exports.handler = async argv => {
 
   const { results } = await jest.runCLI(config, [consts.cwd])
 
-  if (!results.success) {
-    process.exitCode = 1
-  }
+  process.exit(results.success ? 0 : 1)
 }
