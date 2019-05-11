@@ -12,15 +12,15 @@ exports.desc = 'compile an input directory of modules into an output directory'
 exports.handler = argv => {
   const { src, out } = argv
   const { cmd, config } = consts
-  helpers.execute(
-    cmd.babel,
+  const args = [
     src,
     '--out-dir',
     out,
     '--config-file',
     config.babel,
     '--verbose'
-  )
+  ]
+  helpers.execute(cmd.babel, args)
 }
 
 /*

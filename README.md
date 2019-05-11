@@ -27,6 +27,7 @@ yarn add esnext-scripts
 `esnext-scripts` is set of pre-configured helpers for your next generation Javascript application. With it, you can now fully focus on your valuable implementations instead of playing around with various settings & helpers over and over again. Batteries included:
 
 - Latest EMACScript supports backed by:
+  * [ESM](https://github.com/standard-things/esm)
   * [babel-preset-env](https://babeljs.io/docs/en/babel-preset-env/)
   * [babel-preset-stage-1](https://babeljs.io/docs/en/babel-preset-stage-1)
   * [babel-preset-react](https://babeljs.io/docs/en/babel-preset-react)
@@ -52,7 +53,7 @@ yarn add esnext-scripts
 
 
 - `esnext build <src> <out>` - compile an input directory of modules into an output directory.
-- `esnext exec <script> [--watch]` - execute a Node.js script with ESNext supports **NOTE** for development ONLY.
+- `esnext exec <script> [--watch] [--env]` - execute a Node.js script with ESNext supports.
 - `esnext format <glob>` - format files find by the given `glob` pattern via `prettier`.
 - `esnext lint [optional-folder]` - start linting with `standardjs` rules set.
 - `esnext test` - start executing your `Jest` test specs, custom settings supported via (by order):
@@ -118,6 +119,9 @@ describe('<App />', () => {
   "scripts": {
     "lint": "esnext lint",
     "lint:other-folder": "esnext lint other-folder",
+    "start": "yo-env":,
+    "start:development": "esnext exec --watch src/index.js",
+    "start:production": "esnext exec --env ../.env src/index.js",
     "test": "esnext test"
   },
 ```

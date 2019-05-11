@@ -12,5 +12,5 @@ exports.handler = argv => {
   const { glob } = argv
   const { cmd } = consts
 
-  helpers.execute(cmd.prettier, glob)
+  helpers.execute(cmd.prettier, [glob])
 }
