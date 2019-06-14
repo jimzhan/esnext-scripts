@@ -1,6 +1,16 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [1.5.0](https://github.com/jimzhan/esnext-scripts/compare/v1.4.0...v1.5.0) (2019-06-14)
+
+
+### Features
+
+* WIP adding pm2 supports ([d8e4dec](https://github.com/jimzhan/esnext-scripts/commit/d8e4dec))
+* WIP adding pm2-runtime supports ([0c60bad](https://github.com/jimzhan/esnext-scripts/commit/0c60bad))
+
+
 
 # [1.4.0](https://github.com/jimzhan/esnext-scripts/compare/v1.3.3...v1.4.0) (2019-05-11)
 
