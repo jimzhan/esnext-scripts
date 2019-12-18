@@ -119,7 +119,7 @@ describe('<App />', () => {
   "scripts": {
     "lint": "esnext lint",
     "lint:other-folder": "esnext lint other-folder",
-    "start": "yo-env":,
+    "start": "yo-env",
     "start:development": "esnext exec --watch src/index.js",
     "start:production": "esnext exec --env ../.env src/index.js",
     "test": "esnext test"
