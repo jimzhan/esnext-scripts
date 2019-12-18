@@ -30,13 +30,11 @@ exports.handler = (argv) => {
   const dir = argv.dir || process.cwd();
 
   const fix = argv.fix === true;
-  const eslint = new CLIEngine(
-    {
-      fix,
-      extensions: ['.js', '.jsx'],
-      ...config,
-    },
-  );
+  const eslint = new CLIEngine({
+    fix,
+    extensions: ['.js', '.jsx'],
+    ...config,
+  });
 
   const report = eslint.executeOnFiles([dir]);
   const output = eslint.getFormatter('stylish')(report.results);
