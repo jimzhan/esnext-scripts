@@ -36,8 +36,10 @@ const readSettings = async (options = {}) => {
   const { filename, namespace } = options;
   const config = filename ? path.resolve(cwd, filename) : null;
 
-  if (config && fs.existsSync(config)) { // eslint-disable-line
-    settings = require(config)           // eslint-disable-line
+  // eslint-disable-next-line security/detect-non-literal-fs-filename
+  if (config && fs.existsSync(config)) {
+    // eslint-disable-next-line
+    settings = require(config);
   } else if (namespace) {
     settings = await pkgConf(namespace);
   }
