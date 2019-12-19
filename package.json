@@ -1,4 +1,5 @@
 {
+  "private": false,
   "name": "esnext-scripts",
   "version": "2.0.0",
   "description": "Opinionated ESNext application scripts and configurations",
@@ -8,12 +9,15 @@
     "esnext-scripts": "./esnext.js"
   },
   "scripts": {
-    "lint": "cross-env DEBUG=esnext-scripts ./esnext.js lint"
+    "lint": "cross-env DEBUG=esnext-scripts ./esnext.js lint",
+    "test": "cross-env DEBUG=esnext-scripts ./esnext.js test"
   },
-  "repository": "https://github.com/jimzhan/esnext-scripts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jimzhan/esnext-scripts.git"
+  },
   "author": "Jim Zhan <jim.zhan@me.com>",
   "license": "MIT",
-  "private": false,
   "keywords": [
     "6to5",
     "zero-configuration",
@@ -56,11 +60,30 @@
     "@babel/cli": "^7.7.5",
     "@babel/core": "^7.7.5",
     "@babel/node": "^7.7.4",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/plugin-proposal-decorators": "^7.7.4",
+    "@babel/plugin-proposal-do-expressions": "^7.7.4",
+    "@babel/plugin-proposal-export-default-from": "^7.7.4",
+    "@babel/plugin-proposal-export-namespace-from": "^7.7.4",
+    "@babel/plugin-proposal-function-sent": "^7.7.4",
+    "@babel/plugin-proposal-json-strings": "^7.7.4",
+    "@babel/plugin-proposal-logical-assignment-operators": "^7.7.4",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.7.4",
+    "@babel/plugin-proposal-numeric-separator": "^7.7.4",
+    "@babel/plugin-proposal-optional-chaining": "^7.7.5",
+    "@babel/plugin-proposal-pipeline-operator": "^7.7.7",
+    "@babel/plugin-proposal-throw-expressions": "^7.7.4",
+    "@babel/plugin-syntax-dynamic-import": "^7.7.4",
+    "@babel/plugin-syntax-import-meta": "^7.7.4",
     "@babel/preset-env": "^7.7.6",
     "@babel/preset-react": "^7.7.4",
     "babel-eslint": "^10.0.3",
+    "babel-jest": "^24.9.0",
     "cross-env": "^6.0.3",
     "debug": "^4.1.1",
+    "deepmerge": "^4.2.2",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.1",
     "eslint": "^6.7.2",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-plugin-import": "^2.19.1",
@@ -69,11 +92,14 @@
     "eslint-plugin-react-hooks": "^2.3.0",
     "eslint-plugin-security": "^1.4.0",
     "execa": "^3.4.0",
+    "jest": "^24.9.0",
+    "jest-cli": "^24.9.0",
     "log-symbols": "^3.0.0",
     "nodemon": "^2.0.2",
     "pkg-conf": "^3.1.0",
     "pkg-config": "^1.1.1",
     "react": "^16.12.0",
+    "react-dom": "^16.12.0",
     "yargs": "^15.0.2"
   },
   "devDependencies": {

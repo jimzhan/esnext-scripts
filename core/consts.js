@@ -11,6 +11,10 @@ const cmd = {
 const config = {
   babel: require.resolve('../etc/babel.config'),
   eslint: require.resolve('../etc/eslint.config'),
+  jest: {
+    enzyme: require.resolve('../etc/jest.enzyme'),
+    transformer: require.resolve('../etc/jest.transformer'),
+  },
 };
 
 module.exports = {
