@@ -31,7 +31,6 @@ yarn add esnext-scripts
 - A mostly reasonable approach to JavaScript by:
   * [ESLint](https://eslint.org/)
   * [Airbnb](https://github.com/airbnb/javascript)
-  * [Prettier](https://prettier.io/)
 - Delightful JavaScript Testing with
   * [Jest](https://github.com/facebook/jest)
   * [Enzyme](https://github.com/airbnb/enzyme)
