@@ -8,10 +8,10 @@ const debug = require('debug')('esnext');
 const pkg = require('../package.json');
 const consts = require('./consts');
 
-const info = (message) => exports.debug(`${symbols.info} ${message}`);
-const success = (message) => exports.debug(`${symbols.success} ${message}`);
-const warning = (message) => exports.debug(`${symbols.warning} ${message}`);
-const error = (message) => exports.debug(`${symbols.error} ${message}`);
+const info = (message) => debug(`${symbols.info} ${message}`);
+const success = (message) => debug(`${symbols.success} ${message}`);
+const warning = (message) => debug(`${symbols.warning} ${message}`);
+const error = (message) => debug(`${symbols.error} ${message}`);
 
 /**
  * Execute system command.
