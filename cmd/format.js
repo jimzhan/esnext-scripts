@@ -3,11 +3,12 @@ const { core, consts } = require('../core');
 exports.command = 'format [--watch -w] <glob>';
 exports.desc = 'format scripts found by given `glob` pattern';
 
-exports.builder = (yargs) => yargs.option('write', {
-  alias: 'w',
-  type: 'boolean',
-  description: 'rewrites all processed files in place.',
-});
+exports.builder = (yargs) =>
+  yargs.option('write', {
+    alias: 'w',
+    type: 'boolean',
+    description: 'rewrites all processed files in place.',
+  });
 
 /**
  * Format scripts under given glob pattern.
