@@ -20,8 +20,9 @@ const error = (message) => debug(`${symbols.error} ${message}`);
  * @param {array} args - list of command arguments.
  * @param {object} options - command options.
  */
-const execute = (cmd, args, options = {}) =>
+const execute = (cmd, args, options = {}) => {
   execa.sync(cmd, args, { ...options, stdio: 'inherit' });
+};
 
 /**
  * Fetch settings from given file name (.js) and package.json#namespace.

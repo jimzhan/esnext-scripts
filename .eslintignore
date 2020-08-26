@@ -7,3 +7,5 @@ build/
 coverage/
 fixtures/
 templates/
+
+play.js

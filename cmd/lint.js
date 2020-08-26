@@ -18,8 +18,20 @@ Sample report
   usedDeprecatedRules: [ { ruleId: 'no-negated-in-lhs', replacedBy: [Array] } ] }
 */
 
-exports.command = 'lint [dir]';
+exports.command = 'lint [--fix -f] [dir]';
 exports.desc = 'start linting using pre-defined rules set';
+exports.builder = (yargs) =>
+  yargs
+    .option('fix', {
+      alias: 'f',
+      type: 'boolean',
+      description: 'automatically fix problems',
+    })
+    .option('dir', {
+      alias: 'd',
+      type: 'string',
+      description: 'directory to start linting (default: cwd)',
+    });
 
 /**
  * Execute `eslint` linting with default settings under current `cwd`..

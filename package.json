@@ -14,6 +14,27 @@
     "esnext": "./esnext.js",
     "esnext-scripts": "./esnext.js"
   },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,jsx}": [
+      "eslint --fix"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint --env HUSKY_GIT_PARAMS"
+    }
+  },
   "scripts": {
     "commit": "git-cz",
     "lint": "cross-env DEBUG=esnext-scripts ./esnext.js lint",
