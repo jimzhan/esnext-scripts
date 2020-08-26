@@ -48,7 +48,7 @@ yarn add esnext-scripts
 - `esnext build <src> <out>` - compile an input directory of modules into an output directory.
 - `esnext run <script> [--watch] [--env]` - execute a Node.js script with ESNext supports (For Development **ONLY**).
 - `esnext format <glob>` - format files find by the given `glob` pattern via `prettier`.
-- `esnext lint [optional-folder]` - start linting with `standardjs` rules set.
+- `esnext lint [--fix] [optional-folder]` - start linting with `airbnb` rules set.
 - `esnext test` - start executing your `Jest` test specs, custom settings supported via (by order):
   - `<cwd>/jest.config.js`
   - `<cwd>/package.json#jest`
