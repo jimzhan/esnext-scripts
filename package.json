@@ -38,7 +38,9 @@
   "scripts": {
     "commit": "git-cz",
     "lint": "cross-env DEBUG=esnext-scripts ./esnext.js lint",
-    "test": "cross-env DEBUG=esnext-scripts ./esnext.js test"
+    "test": "cross-env DEBUG=esnext-scripts ./esnext.js test",
+    "prerelease": "standard-version",
+    "release": "git push --follow-tags origin sid && npm publish --verbose"
   },
   "dependencies": {
     "@babel/cli": "^7.10.5",
