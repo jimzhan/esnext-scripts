@@ -3,7 +3,10 @@
   "version": "2.0.0",
   "description": "Opinionated ESNext application scripts and configurations",
   "main": "index.js",
-  "repository": "https://github.com/jimzhan/esnext-scripts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jimzhan/esnext-scripts.git"
+  },
   "author": "Jim Zhan <jim.zhan@me.com>",
   "license": "MIT",
   "private": false,

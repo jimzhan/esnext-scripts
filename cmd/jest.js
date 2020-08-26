@@ -1,4 +1,4 @@
-const jest = require('jest-cli');
+const jest = require('jest');
 const merge = require('deepmerge');
 const settings = require('../etc/jest.config');
 const { core, consts } = require('../core');
