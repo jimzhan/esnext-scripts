@@ -26,7 +26,7 @@ exports.builder = (yargs) =>
 exports.handler = (argv) => {
   const { script } = argv;
   const { cmd, config } = consts;
-  const args = ['--config-file', config.babel, script];
+  const args = ['--config-file', config.babel, '--extensions', '.js,.jsx,.ts,.tsx', script];
 
   if (argv.watch) {
     core.execute(cmd.nodemon, ['--exec', cmd.babelNode, ...args]);

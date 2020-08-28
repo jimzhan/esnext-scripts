@@ -1,18 +1,6 @@
 module.exports = {
-  presets: [
-    [
-      '@babel/preset-env',
-      {
-        corejs: 3,
-        useBuiltIns: 'usage',
-        modules: 'commonjs',
-        targets: {
-          node: 'current',
-        },
-      },
-    ],
-    '@babel/preset-react',
-  ],
+  presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript'],
+  // @TODO review necessary plugins.
   plugins: [
     // @babel/preset-stage-1: A formal proposal for the feature.
     '@babel/plugin-proposal-export-default-from',

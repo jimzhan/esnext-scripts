@@ -12,6 +12,6 @@ exports.desc = 'compile an input directory of modules into an output directory';
 exports.handler = (argv) => {
   const { src, out } = argv;
   const { cmd, config } = consts;
-  const args = [src, '--out-dir', out, '--config-file', config.babel, '--verbose'];
+  const args = [src, '--out-dir', out, '--config-file', config.babel, '--extensions', '.js,.jsx,.ts,.tsx', '--verbose'];
   core.execute(cmd.babel, args);
 };

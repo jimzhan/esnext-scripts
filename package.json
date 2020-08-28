@@ -63,6 +63,7 @@
     "@babel/plugin-syntax-import-meta": "^7.10.4",
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.10.4",
+    "@babel/preset-typescript": "^7.10.4",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.3.0",
     "core-js": "^3.6.5",
@@ -95,6 +96,7 @@
   "devDependencies": {
     "@commitlint/cli": "^9.1.2",
     "@commitlint/config-conventional": "^10.0.0",
+    "@types/koa": "^2.11.4",
     "commitizen": "^4.2.1",
     "cz-conventional-changelog": "^3.2.1",
     "husky": "^4.2.5",

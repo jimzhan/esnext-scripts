@@ -22,7 +22,7 @@ yarn add esnext-scripts
 
 ## What?
 
-`esnext-scripts` is set of pre-configured helpers for your next generation Javascript application. With it, you can now fully focus on your valuable implementations instead of playing around with various settings & helpers over and over again. Batteries included:
+`esnext-scripts` is set of pre-configured helpers for your next generation Javascript/Typescript application. With it, you can now fully focus on your valuable implementations instead of playing around with various settings & helpers over and over again. Batteries included:
 
 - Latest EMACScript supports backed by [Babel](https://babeljs.io).
 - A mostly reasonable approach to JavaScript by:
