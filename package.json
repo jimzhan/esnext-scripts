@@ -83,6 +83,8 @@
     "execa": "^4.0.3",
     "jest": "^26.4.2",
     "jest-cli": "^26.4.2",
+    "jest-environment-jsdom": "^26.3.0",
+    "jest-environment-node": "^26.3.0",
     "log-symbols": "^4.0.0",
     "nodemon": "^2.0.4",
     "pkg-conf": "^3.1.0",
