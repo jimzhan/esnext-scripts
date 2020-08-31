@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://github.com/jimzhan/esnext-scripts/compare/v2.0.2...v2.1.0) (2020-08-31)
+
+
+### Features
+
+* enable optional test folder supports for `jest` ([eae1099](https://github.com/jimzhan/esnext-scripts/commit/eae1099b2d3d4b76ee678a3331a0dc04d93772b7))
+
 ### [2.0.2](https://github.com/jimzhan/esnext-scripts/compare/v2.0.1...v2.0.2) (2020-08-28)
 
 
