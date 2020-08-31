@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.1.1](https://github.com/jimzhan/esnext-scripts/compare/v2.1.0...v2.1.1) (2020-08-31)
+
+
+### Bug Fixes
+
+* add missing `[dir]` argument to `jest` command ([f045a43](https://github.com/jimzhan/esnext-scripts/commit/f045a43e2fa851b72196253ed4293fea3c41f4ee))
+
 ## [2.1.0](https://github.com/jimzhan/esnext-scripts/compare/v2.0.2...v2.1.0) (2020-08-31)
 
 
