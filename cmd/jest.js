@@ -6,8 +6,8 @@ const { core, consts } = require('../core');
 const namespace = 'jest';
 const filename = 'jest.config.js';
 
-exports.command = 'test';
-exports.desc = 'run `jest` test specs';
+exports.command = 'test [dir]';
+exports.desc = 'run `jest` test specs under the given directory (default: `cwd`).';
 exports.builder = (yargs) =>
   yargs.option('dir', {
     alias: 'd',

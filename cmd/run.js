@@ -2,7 +2,7 @@ const { core, consts } = require('../core');
 
 exports.command = 'run <script>';
 
-exports.desc = 'execute a Node.js script with Babel supports';
+exports.desc = 'execute a Node.js script with Babel supports.';
 
 exports.builder = (yargs) =>
   yargs

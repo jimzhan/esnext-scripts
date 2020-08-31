@@ -1,7 +1,7 @@
 const { core, consts } = require('../core');
 
 exports.command = 'build <src> <out>';
-exports.desc = 'compile an input directory of modules into an output directory';
+exports.desc = 'compile an input directory of modules into an output directory.';
 
 /**
  * Execute a Node.js script with babel supports.

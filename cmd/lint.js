@@ -19,7 +19,7 @@ Sample report
 */
 
 exports.command = 'lint [--fix -f] [dir]';
-exports.desc = 'start linting using pre-defined rules set';
+exports.desc = 'start linting using pre-defined rules set.';
 exports.builder = (yargs) =>
   yargs
     .option('fix', {
